@@ -7,7 +7,8 @@ public class Player_Mechanics : MonoBehaviour
     // Start is called before the first frame update
 
     public float PlayerHealth;
-    static public int PlayerWin;
+    public Data WhoWon;
+
     void Start()
     {
         
@@ -18,6 +19,7 @@ public class Player_Mechanics : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            WhoWon.PlayerWin = 0;
             Application.Quit();
         }
 
@@ -27,11 +29,11 @@ public class Player_Mechanics : MonoBehaviour
 
             if(this.gameObject.tag == "Player 1")
             {
-                PlayerWin = 2;
+                WhoWon.PlayerWin = 2;
             }
             else if(this.gameObject.tag == "Player 2")
             {
-                PlayerWin = 1;
+                WhoWon.PlayerWin = 1;
             }
         }
     }
