@@ -39,13 +39,13 @@ public class Player_Attacks : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.W) && this.gameObject.tag == "Player 1")
         {
-            attacking = true;
+            //attacking = true;
             HeavyAttack.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.S) && this.gameObject.tag == "Player 1")
         {
-            attacking = true;
+            //attacking = true;
             LightAttack.SetActive(true);
         }
 
@@ -53,13 +53,13 @@ public class Player_Attacks : MonoBehaviour
         ///
         if (Input.GetKeyDown(KeyCode.UpArrow) && this.gameObject.tag == "Player 2")
         {
-            attacking = true;
+            //attacking = true;
             HeavyAttack.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && this.gameObject.tag == "Player 2")
         {
-            attacking = true;
+           // attacking = true;
             LightAttack.SetActive(true);
         }
     }
