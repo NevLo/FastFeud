@@ -7,7 +7,6 @@ public class Player_Mechanics : MonoBehaviour
     // Start is called before the first frame update
 
     public float PlayerHealth;
-    static public int PlayerWin;
     void Start()
     {
         
@@ -24,15 +23,6 @@ public class Player_Mechanics : MonoBehaviour
         if(PlayerHealth <= 0)
         {
             Destroy(this.gameObject);
-
-            if(this.gameObject.tag == "Player 1")
-            {
-                PlayerWin = 2;
-            }
-            else if(this.gameObject.tag == "Player 2")
-            {
-                PlayerWin = 1;
-            }
         }
     }
 }
