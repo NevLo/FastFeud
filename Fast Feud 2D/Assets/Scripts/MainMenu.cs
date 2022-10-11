@@ -7,31 +7,31 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField]
-    private Button StartGameButton = null;
+    private static Button StartGameButton = null;
     [SerializeField]
-    private Button OptionsButton = null;
+    private static Button OptionsButton = null;
     [SerializeField]
-    private Button FightButton = null;
+    private static Button FightButton = null;
     [SerializeField]
-    private Button BackButton = null;
+    private static Button BackButton = null;
     [SerializeField]
-    private Button QuitButton = null;
+    private static Button QuitButton = null;
 
 
 
 
     public void Awake()
     {
-        StartGameButton.onClick.AddListener(PlayGame);
-        OptionsButton.onClick.AddListener(Fight);
-        FightButton.onClick.AddListener(Options);
-        BackButton.onClick.AddListener(ToTheMenu);
-        QuitButton.onClick.AddListener(QuitGame);
+        //StartGameButton.onClick.AddListener(PlayGame);
+        //OptionsButton.onClick.AddListener(Fight);
+        //FightButton.onClick.AddListener(Options);
+        //BackButton.onClick.AddListener(ToTheMenu);
+        //QuitButton.onClick.AddListener(QuitGame);
     }
 
     public void PlayGame (){
-       //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-       SceneManager.LoadScene("CharSelect_Scene");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("CharSelect_Scene");
     }
     public void Fight (){
         SceneManager.LoadScene("FightStage_Scene");
@@ -44,9 +44,9 @@ public class MainMenu : MonoBehaviour
     }
 
     public void QuitGame (){
-    Debug.Log("Quit!");
-    Application.Quit();
-    //System.Environment.Exit(0);
+        Debug.Log("Quit!");
+        Application.Quit();
+        //System.Environment.Exit(0);
     }
 
     public void ToTheMenu(){

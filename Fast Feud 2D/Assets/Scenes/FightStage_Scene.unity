@@ -1119,6 +1119,7 @@ GameObject:
   - component: {fileID: 1426071620}
   - component: {fileID: 1426071622}
   - component: {fileID: 1426071621}
+  - component: {fileID: 1426071623}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player 1
@@ -1304,6 +1305,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1426071623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426071608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cffdc09939eb4780c94b1ee9eb5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHealth: 20
+  WhoWon: {fileID: 11400000, guid: 8ff081168e64de6489f10012580d20cf, type: 2}
 --- !u!1 &1433232761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,7 +2138,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 1519991e5c35a834b9bffde0b49cd65e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
