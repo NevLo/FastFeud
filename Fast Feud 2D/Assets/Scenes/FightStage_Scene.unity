@@ -388,6 +388,7 @@ MonoBehaviour:
   StartDelay: 5
   ActiveDelay: 5
   RecoveryDelay: 0
+  blocking: {fileID: 1426071623}
 --- !u!33 &422526063
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -731,9 +732,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OtherPlayer: {fileID: 0}
+  BlockKey: {fileID: 0}
   PlayerHealth: 20
   IsBlockingLow: 0
-  IsBlockingMid: 0
+  IsBlocking: 0
   WhoWon: {fileID: 11400000, guid: 8ff081168e64de6489f10012580d20cf, type: 2}
 --- !u!114 &636064101
 MonoBehaviour:
@@ -835,6 +837,9 @@ MonoBehaviour:
     m_Bits: 128
   Grounded: 0
   JumpSpeed: 50
+  BlockKeyLeft: 0
+  BlockKeyRight: 0
+  jumping: 0
   IsCrouching: 0
   JumpCooldown: 1
 --- !u!4 &636064107
@@ -1187,6 +1192,9 @@ MonoBehaviour:
     m_Bits: 128
   Grounded: 0
   JumpSpeed: 50
+  BlockKeyLeft: 0
+  BlockKeyRight: 0
+  jumping: 0
   IsCrouching: 0
   JumpCooldown: 1
 --- !u!50 &1426071618
@@ -1343,9 +1351,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OtherPlayer: {fileID: 0}
+  BlockKey: {fileID: 0}
   PlayerHealth: 20
   IsBlockingLow: 0
-  IsBlockingMid: 0
+  IsBlocking: 0
   WhoWon: {fileID: 11400000, guid: 8ff081168e64de6489f10012580d20cf, type: 2}
 --- !u!1 &1433232761
 GameObject:
@@ -1383,6 +1392,7 @@ MonoBehaviour:
   StartDelay: 0
   ActiveDelay: 0
   RecoveryDelay: 0
+  blocking: {fileID: 636064100}
 --- !u!33 &1433232763
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1701,6 +1711,7 @@ MonoBehaviour:
   StartDelay: 0
   ActiveDelay: 0
   RecoveryDelay: 0
+  blocking: {fileID: 636064100}
 --- !u!33 &1502724667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1919,6 +1930,7 @@ MonoBehaviour:
   StartDelay: 20
   ActiveDelay: 5
   RecoveryDelay: 5
+  blocking: {fileID: 1426071623}
 --- !u!1 &1636438777
 GameObject:
   m_ObjectHideFlags: 0
