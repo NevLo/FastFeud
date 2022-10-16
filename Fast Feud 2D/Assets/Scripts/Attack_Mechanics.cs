@@ -17,14 +17,14 @@ public class Attack_Mechanics : MonoBehaviour
 
     void Start()
     {
-        this.gameObject.GetComponent<Collider2D>().enabled = false;
-        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        //this.gameObject.GetComponent<Collider2D>().enabled = false;
+        //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(StartTimer >= StartDelay)
+        /*if(StartTimer >= StartDelay && RecoveryTimer <= RecoveryDelay)
         {
             this.gameObject.SetActive(true);
             this.gameObject.GetComponent<Collider2D>().enabled = true;
@@ -34,7 +34,8 @@ public class Attack_Mechanics : MonoBehaviour
 
         if (ActiveTimer >= ActiveDelay)
         {
-            this.gameObject.SetActive(true);
+            StartTimer = 0;
+            //this.gameObject.SetActive(true);
             RecoveryTimer++;
         }
 
@@ -47,7 +48,11 @@ public class Attack_Mechanics : MonoBehaviour
             
         }
 
-        StartTimer++;
+        else
+        {
+            StartTimer++;
+        }*/
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

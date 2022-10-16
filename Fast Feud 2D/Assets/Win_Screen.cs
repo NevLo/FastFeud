@@ -16,7 +16,9 @@ public class Win_Screen : MonoBehaviour
 
     void Start()
     {
-        
+        won = false;
+        win.text = "";
+        WhoWon.PlayerWin = 0;
     }
 
     // Update is called once per frame
