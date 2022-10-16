@@ -15,10 +15,13 @@ public class Attack_Mechanics : MonoBehaviour
     private float ActiveTimer;
     private float RecoveryTimer;
 
+    public Player_Mechanics blocking;
+
     void Start()
     {
         //this.gameObject.GetComponent<Collider2D>().enabled = false;
         //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        //blocking = gameObject.GetComponent<Player_Mechanics>();
     }
 
     // Update is called once per frame
@@ -57,9 +60,15 @@ public class Attack_Mechanics : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+
         if(collision.gameObject.GetComponent<Player_Mechanics>() != null)
         {
-            collision.gameObject.GetComponent<Player_Mechanics>().PlayerHealth -= damage;
+            if(!collision.gameObject.GetComponent<Player_Mechanics>().IsBlocking)
+            {
+                collision.gameObject.GetComponent<Player_Mechanics>().PlayerHealth -= damage;
+            }
+            
         }
     }
 }

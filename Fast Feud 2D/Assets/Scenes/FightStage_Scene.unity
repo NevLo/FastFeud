@@ -730,7 +730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37cffdc09939eb4780c94b1ee9eb5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OtherPlayer: {fileID: 0}
   PlayerHealth: 20
+  IsBlockingLow: 0
+  IsBlockingMid: 0
   WhoWon: {fileID: 11400000, guid: 8ff081168e64de6489f10012580d20cf, type: 2}
 --- !u!114 &636064101
 MonoBehaviour:
@@ -749,6 +752,15 @@ MonoBehaviour:
   attacking: 0
   cooldown: 0.25
   timer: 0
+  LightStartDelay: 0
+  LightActiveDelay: 0
+  LightRecoveryDelay: 0
+  HeavyStartDelay: 0
+  HeavyActiveDelay: 0
+  HeavyRecoveryDelay: 0
+  PassedStartDelay: 0
+  PassedActiveDelay: 0
+  PassedRecoveryDelay: 0
 --- !u!61 &636064102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -809,6 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 636064103}
+  OtherPlayer: {fileID: 1426071608}
   speed: 10
   HorizontalMove: 0
   DistToGround: 0
@@ -822,6 +835,7 @@ MonoBehaviour:
     m_Bits: 128
   Grounded: 0
   JumpSpeed: 50
+  IsCrouching: 0
   JumpCooldown: 1
 --- !u!4 &636064107
 Transform:
@@ -1159,6 +1173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1426071618}
+  OtherPlayer: {fileID: 636064099}
   speed: 10
   HorizontalMove: 0
   DistToGround: 0
@@ -1172,6 +1187,7 @@ MonoBehaviour:
     m_Bits: 128
   Grounded: 0
   JumpSpeed: 50
+  IsCrouching: 0
   JumpCooldown: 1
 --- !u!50 &1426071618
 Rigidbody2D:
@@ -1237,6 +1253,15 @@ MonoBehaviour:
   attacking: 0
   cooldown: 0.25
   timer: 0
+  LightStartDelay: 0
+  LightActiveDelay: 0
+  LightRecoveryDelay: 0
+  HeavyStartDelay: 0
+  HeavyActiveDelay: 0
+  HeavyRecoveryDelay: 0
+  PassedStartDelay: 0
+  PassedActiveDelay: 0
+  PassedRecoveryDelay: 0
 --- !u!114 &1426071621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,7 +1342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37cffdc09939eb4780c94b1ee9eb5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OtherPlayer: {fileID: 0}
   PlayerHealth: 20
+  IsBlockingLow: 0
+  IsBlockingMid: 0
   WhoWon: {fileID: 11400000, guid: 8ff081168e64de6489f10012580d20cf, type: 2}
 --- !u!1 &1433232761
 GameObject:
