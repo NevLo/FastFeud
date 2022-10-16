@@ -435,10 +435,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 7541299b399652a47b1d9fa6a10e98e1, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 792915061}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -446,7 +446,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: MainMenu.PlayGame
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &792915059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,11 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7541299b399652a47b1d9fa6a10e98e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartGameButton: {fileID: 792915058}
-  OptionsButton: {fileID: 999302429}
-  FightButton: {fileID: 0}
-  BackButton: {fileID: 0}
-  QuitButton: {fileID: 823049546}
 --- !u!1 &823049544
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +510,7 @@ GameObject:
   - component: {fileID: 823049547}
   - component: {fileID: 823049546}
   - component: {fileID: 823049549}
+  - component: {fileID: 823049550}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -587,7 +583,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 823049550}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -596,9 +592,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu.QuitGame
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &823049547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +643,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c4abbabde42d8445ab813f0bd40b5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &823049550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823049544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7541299b399652a47b1d9fa6a10e98e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &985739386
@@ -742,6 +750,7 @@ GameObject:
   - component: {fileID: 999302430}
   - component: {fileID: 999302429}
   - component: {fileID: 999302432}
+  - component: {fileID: 999302433}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -814,7 +823,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 999302433}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Options
         m_Mode: 1
@@ -823,9 +832,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu.Options
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &999302430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +883,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c4abbabde42d8445ab813f0bd40b5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &999302433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999302427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7541299b399652a47b1d9fa6a10e98e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1082006071
