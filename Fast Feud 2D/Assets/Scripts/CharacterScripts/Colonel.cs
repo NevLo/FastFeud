@@ -41,7 +41,7 @@ public class Colonel : Character
         //## SUPER ATTACK FRAME DATA ##
         superAttackSUF = 0;
         superAttackACF = 0;
-        superAttackREF
+        superAttackREF = 0;
         //## CROUCHING LIGHT ATTACK FRAME DATA ##
         crouchLightAttackSUF = 0;
         crouchLightAttackACF = 0;
