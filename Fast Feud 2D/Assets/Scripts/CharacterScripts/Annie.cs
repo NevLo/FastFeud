@@ -66,78 +66,78 @@ public class Annie : Character
     }
 
     //## ABSTRACT ATTACK METHODS ##
-    public void doLightAttack()
+    public override void doLightAttack()
     {
         isAttacking = true;
     }
-    public void doHeavyAttack()
+    public override void doHeavyAttack()
     {
         isAttacking = true;
     }
-    public void doKickAttack()
+    public override void doKickAttack()
     {
         isAttacking = true;
     }
-    public void doCrouchingLightAttack()
+    public override void doCrouchingLightAttack()
     {
         isAttacking = true;
     }
-    public void doCrouchingHeavyAttack()
+    public override void doCrouchingHeavyAttack()
     {
         isAttacking = true;
     }
-    public void doCrouchingKickAttack()
+    public override void doCrouchingKickAttack()
     {
         isAttacking = true;
     }
-    public void doSuperAttack()
+    public override void doSuperAttack()
     {
         isAttacking = true;
         isSupering = true;
     }
     //## ABSTRACT ATTACK ANIMATION METHODS ##
-    public void doLightAttackAnim()
+    public override void doLightAttackAnim()
     {
 
     }
-    public void doHeavyAttackAnim()
+    public override void doHeavyAttackAnim()
     {
 
     }
-    public void doKickAttackAnim()
+    public override void doKickAttackAnim()
     {
 
     }
-    public void doCrouchingLightAttackAnim()
+    public override void doCrouchingLightAttackAnim()
     {
 
     }
-    public void doCrouchingHeavyAttackAnim()
+    public override void doCrouchingHeavyAttackAnim()
     {
 
     }
-    public void doCrouchingKickAttackAnim()
+    public override void doCrouchingKickAttackAnim()
     {
 
     }
-    public void doSuperAttackAnim()
+    public override void doSuperAttackAnim()
     {
 
     }
     //## ABSTRACT MOVEMENT ANIMATION METHODS ##
-    public void doJumpAnim()
+    public override void doJumpAnim()
     {
 
     }
-    public void doWalkAnim()
+    public override void doWalkAnim()
     {
 
     }
-    public void doBlockAnim()
+    public override void doBlockAnim()
     {
 
     }
-    public void doCrouchAnim()
+    public override void doCrouchAnim()
     {
 
     }
