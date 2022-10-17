@@ -67,6 +67,11 @@ public class Attack_Mechanics : MonoBehaviour
             if(!collision.gameObject.GetComponent<Player_Mechanics>().IsBlocking)
             {
                 collision.gameObject.GetComponent<Player_Mechanics>().PlayerHealth -= damage;
+                collision.gameObject.GetComponent<Player_Mechanics>().HitStun = true;
+            }
+            else if(collision.gameObject.GetComponent<Player_Mechanics>().IsBlocking)
+            {
+                collision.gameObject.GetComponent<Player_Mechanics>().BlockStun = true;
             }
             
         }

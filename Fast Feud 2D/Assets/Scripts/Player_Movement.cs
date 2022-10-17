@@ -6,6 +6,7 @@ public class Player_Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public GameObject OtherPlayer;
+    public Player_Mechanics stun;
     public float speed;
     public float HorizontalMove;
     public float DistToGround;
@@ -50,22 +51,26 @@ public class Player_Movement : MonoBehaviour
             BlockKeyLeft = false;
             BlockKeyRight = true;
         }
+
+        stun = gameObject.GetComponent<Player_Mechanics>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if(IsFacingRight)
-        {
 
+
+        if(stun.BlockStun == true || stun.HitStun == true)
+        {
+            speed = 0;
         }
 
         if(IsCrouching)
         {
             speed = 5;
         }
-        else if(!IsCrouching)
+        else if(!IsCrouching || (stun.BlockStun == true && stun.HitStun == true))
         {
             speed = 10;
         }

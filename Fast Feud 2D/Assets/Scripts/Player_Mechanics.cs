@@ -11,6 +11,10 @@ public class Player_Mechanics : MonoBehaviour
     public float PlayerHealth;
     public bool IsBlockingLow;
     public bool IsBlocking;
+    public bool HitStun;
+    public bool BlockStun;
+    public float HitStunTimer;
+    public float BlockStunTimer;
     public Data WhoWon;
 
     void Start()
@@ -22,7 +26,27 @@ public class Player_Mechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(BlockKey.BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
+        if(BlockStun == true)
+        {
+            BlockStunTimer++;
+            if(BlockStunTimer >= 5)
+            {
+                BlockStun = false;
+                HitStunTimer = 0;
+            }
+        }
+
+        if (HitStun == true)
+        {
+            HitStunTimer++;
+            if (HitStunTimer >= 5)
+            {
+                HitStun = false;
+                HitStunTimer = 0;
+            }
+        }
+
+        if (BlockKey.BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
         {
             IsBlocking = true;
             
