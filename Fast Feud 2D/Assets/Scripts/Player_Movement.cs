@@ -184,8 +184,11 @@ public class Player_Movement : MonoBehaviour
             IsCrouching = false;
         }
 
-
-        Flip();
+        if(this.gameObject != null)
+        {
+            Flip();
+        }
+        
     }
 
     bool IsGrounded()
@@ -204,7 +207,7 @@ public class Player_Movement : MonoBehaviour
     void Flip()
     {
 
-        if(IsFacingRight && OtherPlayer.transform.position.x <= this.gameObject.transform.position.x)
+        if(IsFacingRight && OtherPlayer.transform.position.x <= this.gameObject.transform.position.x && OtherPlayer.gameObject != null)
         {
             IsFacingRight = !IsFacingRight;
             Vector3 LocalScale = transform.localScale;
@@ -215,7 +218,7 @@ public class Player_Movement : MonoBehaviour
 
         }
 
-        else if (!IsFacingRight && OtherPlayer.transform.position.x >= this.gameObject.transform.position.x)
+        else if (!IsFacingRight && OtherPlayer.transform.position.x >= this.gameObject.transform.position.x && OtherPlayer.gameObject != null)
         {
             IsFacingRight = !IsFacingRight;
             Vector3 LocalScale = transform.localScale;

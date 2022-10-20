@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Win_Screen : MonoBehaviour
@@ -8,7 +9,7 @@ public class Win_Screen : MonoBehaviour
     // Start is called before the first frame update
     
 
-    public TextMeshProUGUI win;
+    public Text win;
     private bool won = false;
     private float WinTimer;
     public float WinCooldown;

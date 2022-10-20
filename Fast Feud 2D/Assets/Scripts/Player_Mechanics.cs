@@ -121,7 +121,7 @@ public class Player_Mechanics : MonoBehaviour
 
         if(PlayerHealth <= 0)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
 
             if(this.gameObject.tag == "Player 1")
             {
