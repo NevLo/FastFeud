@@ -538,7 +538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  StartDamage: 0
   StartDelay: 5
   ActiveDelay: 5
   RecoveryDelay: 0
@@ -550,7 +549,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422526061}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &422526064
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2420,7 +2419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  StartDamage: 0
   StartDelay: 0
   ActiveDelay: 0
   RecoveryDelay: 0
@@ -2432,7 +2430,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433232761}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1433232764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2740,7 +2738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  StartDamage: 0
   StartDelay: 0
   ActiveDelay: 0
   RecoveryDelay: 0
@@ -2752,7 +2749,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502724665}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1502724668
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2878,7 +2875,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633480115}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1633480118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2960,7 +2957,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  StartDamage: 0
   StartDelay: 20
   ActiveDelay: 5
   RecoveryDelay: 5
