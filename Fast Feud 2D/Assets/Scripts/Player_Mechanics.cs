@@ -8,7 +8,9 @@ public class Player_Mechanics : MonoBehaviour
 
     public GameObject OtherPlayer;
     public Player_Movement BlockKey;
+    public float PlayerMaxHealth;
     public float PlayerHealth;
+    public string PlayerName;
     public bool IsBlockingLow;
     public bool IsBlocking;
     public bool HitStun;
@@ -29,17 +31,19 @@ public class Player_Mechanics : MonoBehaviour
         if(BlockStun == true)
         {
             BlockStunTimer++;
-            if(BlockStunTimer >= 5)
+            if(BlockStunTimer >= 60)
             {
+
                 BlockStun = false;
-                HitStunTimer = 0;
+                BlockStunTimer = 0;
             }
         }
 
         if (HitStun == true)
         {
+            
             HitStunTimer++;
-            if (HitStunTimer >= 5)
+            if (HitStunTimer >= 120)
             {
                 HitStun = false;
                 HitStunTimer = 0;
@@ -116,7 +120,6 @@ public class Player_Mechanics : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             WhoWon.PlayerWin = 0;
-            Application.Quit();
         }
 
         if(PlayerHealth <= 0)

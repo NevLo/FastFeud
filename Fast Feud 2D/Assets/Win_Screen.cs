@@ -10,6 +10,7 @@ public class Win_Screen : MonoBehaviour
     
 
     public Text win;
+    public GameObject background;
     private bool won = false;
     private float WinTimer;
     public float WinCooldown;
@@ -44,9 +45,11 @@ public class Win_Screen : MonoBehaviour
         if (won)
         {
             WinTimer += Time.deltaTime;
+            background.SetActive(true);
 
             if (WinTimer >= WinCooldown)
             {
+                background.SetActive(false);
                 WinTimer = 0;
                 WhoWon.PlayerWin = 0;
                 won = false;

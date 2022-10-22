@@ -27,6 +27,20 @@ public class Attack_Mechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(blocking.HitStun || blocking.BlockStun)
+        {
+            gameObject.SetActive(false);
+        }
+
+
+
+
+
+
+
+
+
         /*if(StartTimer >= StartDelay && RecoveryTimer <= RecoveryDelay)
         {
             this.gameObject.SetActive(true);
@@ -58,7 +72,7 @@ public class Attack_Mechanics : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //meep
 
@@ -75,5 +89,6 @@ public class Attack_Mechanics : MonoBehaviour
             }
             
         }
+
     }
 }

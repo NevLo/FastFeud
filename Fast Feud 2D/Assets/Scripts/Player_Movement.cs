@@ -90,7 +90,7 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1")
+        if(Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
             
             if (IsGrounded() || IsGroundedOnPlayer())
@@ -104,7 +104,7 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1")
+        if (Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
             
             if (IsGrounded() || IsGroundedOnPlayer())
@@ -118,19 +118,19 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && jumping == false && this.gameObject.tag == "Player 1")
+        if (Input.GetKeyDown(KeyCode.W) && jumping == false && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
             //IsCrouching = false;
             jumping = true;
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
         }
 
-        if (Input.GetKey(KeyCode.S) && !jumping && this.gameObject.tag == "Player 1")
+        if (Input.GetKey(KeyCode.S) && !jumping && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = true;
         }
 
-        else if(!Input.GetKeyUp(KeyCode.S) && this.gameObject.tag == "Player 1")
+        else if(!Input.GetKeyUp(KeyCode.S) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
         }
@@ -138,7 +138,7 @@ public class Player_Movement : MonoBehaviour
 
         //////////////////////////////////////////////////////////////////////////////////
 
-        if (Input.GetKey(KeyCode.LeftArrow) && this.gameObject.tag == "Player 2")
+        if (Input.GetKey(KeyCode.LeftArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
             if (IsGrounded() || IsGroundedOnPlayer())
@@ -152,7 +152,7 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.tag == "Player 2")
+        if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
             if (IsGrounded() || IsGroundedOnPlayer())
@@ -167,19 +167,19 @@ public class Player_Movement : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumping == false && this.gameObject.tag == "Player 2")
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumping == false && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
             jumping = true;
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) && !jumping && this.gameObject.tag == "Player 2")
+        if (Input.GetKey(KeyCode.DownArrow) && !jumping && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = true;
         }
 
-        else if (!Input.GetKeyUp(KeyCode.DownArrow) && this.gameObject.tag == "Player 2")
+        else if (!Input.GetKeyUp(KeyCode.DownArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
         }
