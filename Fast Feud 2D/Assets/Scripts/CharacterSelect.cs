@@ -1,79 +1,131 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class CharacterSelect : MonoBehaviour
 {
-
-    Data PlayerSelect;
-    private int WhichPlayer;
-    private void Update()
+    public static Character player1 = null;
+    public static Character player2 = null;
+    Character[] charList =
     {
-        Player1Player2();
-    }
+        new Jack(),
+        new BurgerKing(),
+        new Annie(),
+        new LilCeaser(),
+        new Panda(),
+        new Wendy(),
+        new Ronnie(),
+        new Colonel(),
+        new Waffle()
+    };
+    string[] stageList =
+    {
+        "Wendys Parking Lot",
+        "Jacks Front Lawn",
+        "Waffle House Interior",
+        "Burgers Kingdom"
+    };
+    int currentlySelectedStage = 0;
 
+    public Text stageText; 
+    public void Start()
+    {
+        stageText = GameObject.Find("StageTextChangeable").GetComponent<Text>();
+        stageText.text = stageList[currentlySelectedStage];
+    }
+    public void Update()
+    {
+        stageText.text = stageList[currentlySelectedStage];
+    }
 
     public void sceneSelect(){
 
     }
     public void rand (){
-       int setRand = Random.Range(0,8);
+        int setRand = Random.Range(0,9);
+        BindCharacterToPlayer(setRand);
+        BindCharacterToPlayer(Random.Range(0, 9));
+
     }
+    //implemented
     public void char1 (){
-
-        if(WhichPlayer == 1)
-        {
-            
-        }
-
+        BindCharacterToPlayer(0);
         //Boxer Jack
 
-       //display char
-       //Store character pngs as masks
-       //pass char1 
+        //display char
+        //Store character pngs as masks
+        //pass char1 
     }
-    
+    //implemented    
     public void char2 (){
-       //king borg
+        BindCharacterToPlayer(1);
+        //king borg
     }
     public void char3 (){
-       //annie P
+        BindCharacterToPlayer(2);
+        //annie P
     }
     public void char4 (){
+        BindCharacterToPlayer(3);
         //little C
-       
+
     }
     public void char5 (){
+        BindCharacterToPlayer(4);
         //Panda
-       
+
     }
+
+    //implemented 
     public void char6 (){
+        BindCharacterToPlayer(5);
         //Wendy
     }
+
     public void char7 (){
-       //Ronnie
+        BindCharacterToPlayer(6);
+        //Ronnie
     }
     public void char8 (){
-       //SLander
+        BindCharacterToPlayer(7);
+        //SLander
     }
 
-    public void Player1Player2()
+    // implemented
+    public void char9()
     {
-        if (Input.GetMouseButtonDown(0))
+        BindCharacterToPlayer(8);
+        //Waffle
+    }
+    public void nextStage()
+    {
+        currentlySelectedStage = (currentlySelectedStage + 1) % stageList.Length;
+    }
+    public void prevStage()
+    {
+        if(currentlySelectedStage == 0)
         {
-            WhichPlayer = 1;
+            currentlySelectedStage = 3;
+            return;
         }
+        currentlySelectedStage = (currentlySelectedStage - 1) % stageList.Length;
+    }
 
-        else if (Input.GetMouseButtonDown(1))
+
+
+    public void BindCharacterToPlayer(int ind)
+    {
+        if (player1 == null)
         {
-            WhichPlayer = 2;
+            player1 = charList[ind];
+            Debug.Log("Player 1 has selected " + player1.ToString());
         }
-
         else
         {
-            WhichPlayer = 3;
+            player2 = charList[ind];
+            Debug.Log("Player 2 has selcted " + player2.ToString());
         }
     }
-    
 }
