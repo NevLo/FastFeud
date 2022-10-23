@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Win_Screen : MonoBehaviour
 {
@@ -26,14 +27,16 @@ public class Win_Screen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(WhoWon.PlayerWin == 1)
+        if(WhoWon.PlayerWin == 1 && WhoWon.Player1Wins < 2)
         {
-            win.text = "Player 1 Wins";
+            win.text = "Player 1 Wins The Round";
             won = true;
+            //Data.Player1Wins++;
+            //if()
         }
-        else if (WhoWon.PlayerWin == 2)
+        else if (WhoWon.PlayerWin == 2 && WhoWon.Player2Wins < 2)
         {
-            win.text = "Player 2 Wins";
+            win.text = "Player 2 Wins The Round";
             won = true;
         }
 
@@ -53,6 +56,7 @@ public class Win_Screen : MonoBehaviour
                 WinTimer = 0;
                 WhoWon.PlayerWin = 0;
                 won = false;
+                SceneManager.LoadScene("FightStage_Scene");
             }
         }
     }

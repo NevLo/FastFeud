@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab28e42243c14074db620a202605ed11, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  PlayerWin: 0
+  PlayerWin: 1
+  HasSomeoneWon: 0
+  HasSomeoneWonTwice: 0
+  HasFightStarted: 0
+  Player1Wins: 0
+  Player2Wins: 0

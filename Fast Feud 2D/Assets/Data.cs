@@ -7,6 +7,11 @@ using UnityEngine;
 public class Data : ScriptableObject
 {
     public int PlayerWin;
+    public bool HasSomeoneWon;
+    public bool HasSomeoneWonTwice;
+    public bool HasFightStarted;
+    public int Player1Wins;
+    public int Player2Wins;
 
 
     // Could also implement some methods to set/read data,

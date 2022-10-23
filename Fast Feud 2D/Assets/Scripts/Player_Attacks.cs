@@ -104,7 +104,7 @@ public class Player_Attacks : MonoBehaviour
                 PassedStartDelay, PassedActiveDelay, PassedRecoveryDelay);
         }
 
-        if(Input.GetKeyDown(KeyCode.F) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun)
+        if(Input.GetKeyDown(KeyCode.F) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
         {
             attacking = true;
             LightAttackTrue = true;
@@ -119,7 +119,7 @@ public class Player_Attacks : MonoBehaviour
     
 }
 
-        if (Input.GetKeyDown(KeyCode.R) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun)
+        if (Input.GetKeyDown(KeyCode.R) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
         {
             attacking = true;
             HeavyAttackTrue = true;
@@ -136,7 +136,7 @@ public class Player_Attacks : MonoBehaviour
 
         ////////////////////////////////////////////////////////////////////////
         ///
-        if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun)
+        if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
         {
             attacking = true;
             LightAttackTrue = true;
@@ -150,7 +150,7 @@ public class Player_Attacks : MonoBehaviour
             PassedRecoveryDelay = LightRecoveryDelay;
         }
 
-        if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun)
+        if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
         {
             attacking = true;
             HeavyAttackTrue = true;

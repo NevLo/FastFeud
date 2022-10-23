@@ -6,6 +6,7 @@ public class Player_Mechanics : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    
     public GameObject OtherPlayer;
     public Player_Movement BlockKey;
     public float PlayerMaxHealth;
@@ -18,11 +19,12 @@ public class Player_Mechanics : MonoBehaviour
     public float HitStunTimer;
     public float BlockStunTimer;
     public Data WhoWon;
-
+    public bool doWinCheck = true;
     void Start()
     {
         Application.targetFrameRate = 60;
         BlockKey = this.gameObject.GetComponent<Player_Movement>();
+
     }
 
     // Update is called once per frame
@@ -122,18 +124,25 @@ public class Player_Mechanics : MonoBehaviour
             WhoWon.PlayerWin = 0;
         }
 
-        if(PlayerHealth <= 0)
+        if(PlayerHealth <= 0 && doWinCheck)
         {
             this.gameObject.SetActive(false);
 
             if(this.gameObject.tag == "Player 1")
             {
                 WhoWon.PlayerWin = 2;
+                WhoWon.HasSomeoneWon = true;
+                WhoWon.Player2Wins++;
+                
             }
             else if(this.gameObject.tag == "Player 2")
             {
                 WhoWon.PlayerWin = 1;
+                WhoWon.HasSomeoneWon = true;
+                WhoWon.Player1Wins++;
+                
             }
+            doWinCheck = false;
         }
     }
 }

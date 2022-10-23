@@ -137,8 +137,13 @@ public class Player_Movement : MonoBehaviour
 
 
         //////////////////////////////////////////////////////////////////////////////////
+        ///
+        //var turnAmount = Input.GetAxis("Horizontal");
+       // Debug.Log(turnAmount);
+       // rb.AddForce(Vector2.left * speed * turnAmount * -20);
 
         if (Input.GetKey(KeyCode.LeftArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
+        //if (Input.GetInput("Horzontal") && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
             if (IsGrounded() || IsGroundedOnPlayer())

@@ -6,6 +6,14 @@ using UnityEngine;
 public class CharacterSelect : MonoBehaviour
 {
 
+    Data PlayerSelect;
+    private int WhichPlayer;
+    private void Update()
+    {
+        Player1Player2();
+    }
+
+
     public void sceneSelect(){
 
     }
@@ -13,6 +21,12 @@ public class CharacterSelect : MonoBehaviour
        int setRand = Random.Range(0,8);
     }
     public void char1 (){
+
+        if(WhichPlayer == 1)
+        {
+            
+        }
+
         //Boxer Jack
 
        //display char
@@ -42,6 +56,24 @@ public class CharacterSelect : MonoBehaviour
     }
     public void char8 (){
        //SLander
+    }
+
+    public void Player1Player2()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            WhichPlayer = 1;
+        }
+
+        else if (Input.GetMouseButtonDown(1))
+        {
+            WhichPlayer = 2;
+        }
+
+        else
+        {
+            WhichPlayer = 3;
+        }
     }
     
 }
