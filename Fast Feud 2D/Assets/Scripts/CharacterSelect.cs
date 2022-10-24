@@ -27,7 +27,7 @@ public class CharacterSelect : MonoBehaviour
         "Waffle House Interior",
         "Burgers Kingdom"
     };
-    int currentlySelectedStage = 0;
+    public static int currentlySelectedStage = 0;
 
     public Text stageText; 
     public void Start()
