@@ -12,6 +12,8 @@ public class CharacterSelect : MonoBehaviour
     public Text p2;
     public static Character player1 = null;
     public static Character player2 = null;
+
+    public GameObject FightBtn;
     Character[] charList =
     {
         new Jack(),
@@ -44,6 +46,8 @@ public class CharacterSelect : MonoBehaviour
         stageText.text = stageList[currentlySelectedStage];
         p1 = GameObject.Find("Player1Txt").GetComponent<Text>();
         p2 = GameObject.Find("Player2Txt").GetComponent<Text>();
+        FightBtn.SetActive(false);
+        
     }
     public void Update()
     {
@@ -123,6 +127,20 @@ public class CharacterSelect : MonoBehaviour
         currentlySelectedStage = (currentlySelectedStage - 1) % stageList.Length;
     }
 
+    public void resetPlayer1()
+    {
+        player1 = null;
+        p1Selected = false;
+        p1.text = "PLAYER 1 UNSELECTED";
+        FightBtn.SetActive(false);
+    }
+    public void resetPlayer2()
+    {
+        player2 = null;
+        p2Selected = false;
+        p2.text = "PLAYER 2 UNSELECTED";
+        FightBtn.SetActive(false);
+    }
 
 
     public void BindCharacterToPlayer(int ind)
@@ -138,6 +156,10 @@ public class CharacterSelect : MonoBehaviour
             player2 = charList[ind];
             Debug.Log("Player 2 has selcted " + player2.ToString());
             p2.text = "Player 2: " + player2.ToString();
+        }
+
+        if(player1 != null && player2 != null){
+            FightBtn.SetActive(true);
         }
     }
 }

@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 544008778}
   - component: {fileID: 544008779}
   m_Layer: 5
-  m_Name: ControlsTxt
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,8 +384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 133}
-  m_SizeDelta: {x: 1200, y: 500}
+  m_AnchoredPosition: {x: 87, y: 58}
+  m_SizeDelta: {x: 1200, y: 700}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &544008778
 CanvasRenderer:
@@ -428,16 +428,116 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'A to move left
+  m_Text: 'Player 1 controls
+
+
+    A to move left
 
     D to move right
 
-    W for a normal attack
+    W to
+    jump
 
-    S
-    for a quick attack
+    S to crouch
 
-    SPACE for jump'
+    F for a light attack
+
+    R for heavy attack '
+--- !u!1 &973480826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973480827}
+  - component: {fileID: 973480829}
+  - component: {fileID: 973480828}
+  m_Layer: 5
+  m_Name: Player2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &973480827
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973480826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038893984}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 954, y: 58}
+  m_SizeDelta: {x: 1200, y: 700}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &973480828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973480826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 68
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 68
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Player 2 controls
+
+
+    Left arrow to move left
+
+    Rght arrow to move
+    right
+
+    Up arrow to jump
+
+    Down arrow to crouch
+
+    O for a light attack
+
+    P
+    for heavy attack '
+--- !u!222 &973480829
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973480826}
+  m_CullTransparentMesh: 1
 --- !u!1 &1191117593
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +859,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPTIONS
+  m_Text: CONTROLS
 --- !u!1 &1981295027
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +1024,7 @@ RectTransform:
   - {fileID: 1306293821}
   - {fileID: 1509962402}
   - {fileID: 544008776}
+  - {fileID: 973480827}
   - {fileID: 522361361}
   m_Father: {fileID: 0}
   m_RootOrder: 1
