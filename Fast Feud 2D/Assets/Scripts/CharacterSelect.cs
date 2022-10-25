@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class CharacterSelect : MonoBehaviour
 {
+    public bool p1Selected = false;
+    public bool p2Selected = false;
+    public Text p1;
+    public Text p2;
     public static Character player1 = null;
     public static Character player2 = null;
     Character[] charList =
@@ -32,8 +36,14 @@ public class CharacterSelect : MonoBehaviour
     public Text stageText; 
     public void Start()
     {
+        player1 = null;
+        player2 = null;
+        p1Selected = false;
+        p2Selected = false;
         stageText = GameObject.Find("StageTextChangeable").GetComponent<Text>();
         stageText.text = stageList[currentlySelectedStage];
+        p1 = GameObject.Find("Player1Txt").GetComponent<Text>();
+        p2 = GameObject.Find("Player2Txt").GetComponent<Text>();
     }
     public void Update()
     {
@@ -121,11 +131,14 @@ public class CharacterSelect : MonoBehaviour
         {
             player1 = charList[ind];
             Debug.Log("Player 1 has selected " + player1.ToString());
+            p1.text = "Player 1: " + player1.ToString();
         }
         else
         {
             player2 = charList[ind];
             Debug.Log("Player 2 has selcted " + player2.ToString());
+            p2.text = "Player 2: " + player2.ToString();
         }
     }
 }
+  

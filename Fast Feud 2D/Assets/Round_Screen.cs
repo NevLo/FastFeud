@@ -67,6 +67,7 @@ public class Round_Screen : MonoBehaviour
             else
             {
                 RoundScreen.text = "Player 2 Wins";
+                RoundBackground.SetActive(true);
                 WhoWon.HasSomeoneWon = false;
                 //WhoWon.Player1Wins = 0;
                 //WhoWon.Player2Wins = 0;
