@@ -56,6 +56,7 @@ public class Apply_Player_Sprite : MonoBehaviour
             default:
             break;
         }
+
     }
 
     // Update is called once per frame

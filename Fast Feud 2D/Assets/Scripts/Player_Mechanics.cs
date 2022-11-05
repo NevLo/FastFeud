@@ -8,6 +8,8 @@ public class Player_Mechanics : MonoBehaviour
 
     
     public GameObject OtherPlayer;
+    public GameObject PauseScreen;
+    private bool IsPaused = false;
     public Player_Movement BlockKey;
     public float PlayerMaxHealth;
     public float PlayerHealth;
@@ -119,12 +121,23 @@ public class Player_Mechanics : MonoBehaviour
             IsBlocking = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && IsPaused == false && gameObject.tag == "Player 1")
         {
-            WhoWon.PlayerWin = 0;
+            //WhoWon.PlayerWin = 0;
+            PauseScreen.SetActive(true);
+            Time.timeScale = 0;
+            IsPaused = true;
         }
 
-        if(PlayerHealth <= 0 && doWinCheck)
+        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused == true && gameObject.tag == "Player 1")
+        {
+            //WhoWon.PlayerWin = 0;
+            PauseScreen.SetActive(false);
+            Time.timeScale = 1;
+            IsPaused = false;
+        }
+
+        if (PlayerHealth <= 0 && doWinCheck)
         {
             this.gameObject.SetActive(false);
 

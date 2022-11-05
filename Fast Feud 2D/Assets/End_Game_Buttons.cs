@@ -31,19 +31,29 @@ public class End_Game_Buttons : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu_Scene");
         ResetData();
     }
 
     public void GoToCharacterSelect()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("CharSelect_Scene");
         ResetData();
     }
 
     public void PlayAgain()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("FightStage_Scene");
         ResetData();
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1;
+        ResetData();
+        Application.Quit();
     }
 }

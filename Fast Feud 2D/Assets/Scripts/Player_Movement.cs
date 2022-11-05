@@ -1,3 +1,7 @@
+//THIS CODE IS SPAGHETTI GOD HELP YOU TO READ IT- Dan//
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject OtherPlayer;
     public Player_Mechanics stun;
+    public float MaxSpeed;
     public float speed;
     public float HorizontalMove;
     public float DistToGround;
@@ -29,6 +34,8 @@ public class Player_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        MaxSpeed = speed;
         DistToGround = GetComponent<Collider2D>().bounds.extents.y;
         if(this.gameObject.tag == "Player 1")
         {
@@ -39,7 +46,8 @@ public class Player_Movement : MonoBehaviour
             IsFacingRight = false;
         }
 
-        offset = new Vector3(0, -0.2f, 0);
+        //offset = new Vector3(0, -.2f, 0);
+        //offset = new Vector3(0, -1f, 0);
 
         if (gameObject.tag == "Player 1")
         {
@@ -70,12 +78,16 @@ public class Player_Movement : MonoBehaviour
         {
             speed = 5;
         }
-        else if(!IsCrouching || (stun.BlockStun == true && stun.HitStun == true))
+        else if(!IsCrouching && (stun.BlockStun == false && stun.HitStun == false) && (IsGrounded() || IsGroundedOnPlayer()) && gameObject.tag == "Player 1")
+        {
+            speed = 10;
+        }
+        else if (!IsCrouching && (stun.BlockStun == false && stun.HitStun == false) && (IsGrounded() || IsGroundedOnPlayer()) && gameObject.tag == "Player 2")
         {
             speed = 10;
         }
 
-        if (jumping)
+        /*if (jumping)
         {
             JumpTimer += Time.deltaTime;
 
@@ -84,7 +96,7 @@ public class Player_Movement : MonoBehaviour
                 JumpTimer = 0;
                 jumping = false;
             }
-        }
+        }*/
 
     }
 
@@ -98,10 +110,10 @@ public class Player_Movement : MonoBehaviour
                 rb.velocity = new Vector2(-1 * speed, 0);
             }
 
-            else
+            /*else
             {
-                rb.AddForce(Vector2.left * speed);
-            }
+                //rb.AddForce(Vector2.left * speed);
+            }*/
         }
 
         if (Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
@@ -112,17 +124,17 @@ public class Player_Movement : MonoBehaviour
                 rb.velocity = new Vector2(1 * speed, 0);
             }
 
-            else
+            /*else
             {
                 rb.AddForce(Vector2.right * speed);
-            }
+            }*/
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && jumping == false && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
+        if (Input.GetKeyDown(KeyCode.W) && (IsGrounded()) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
-            //IsCrouching = false;
-            jumping = true;
-            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+            IsCrouching = false;
+            //jumping = true;
+            rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
         }
 
         if (Input.GetKey(KeyCode.S) && !jumping && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
@@ -151,10 +163,10 @@ public class Player_Movement : MonoBehaviour
                 rb.velocity = new Vector2(-1 * speed, 0);
             }
 
-            else
+            /*else
             {
                 rb.AddForce(Vector2.left * speed);
-            }
+            }*/
         }
 
         if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
@@ -165,18 +177,25 @@ public class Player_Movement : MonoBehaviour
                 rb.velocity = new Vector2(1 * speed, 0);
             }
             
-            else
+            /*else
             {
                 rb.AddForce(Vector2.right * speed);
-            }
+            }*/
             
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumping == false && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
+        /*if (Input.GetKeyDown(KeyCode.UpArrow) && jumping == false && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
             jumping = true;
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+        }*/
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (IsGrounded()) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
+        {
+            IsCrouching = false;
+            //jumping = true;
+            rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
+
         }
 
         if (Input.GetKey(KeyCode.DownArrow) && !jumping && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
@@ -193,20 +212,39 @@ public class Player_Movement : MonoBehaviour
         {
             Flip();
         }
-        
+
+        if (!IsGrounded() && !IsGroundedOnPlayer() && this.gameObject.tag == "Player 1")
+        {
+            speed = MaxSpeed * .5f;
+        }
+        else
+        {
+            //speed = MaxSpeed;
+        }
+
+        if (!IsGrounded() && !IsGroundedOnPlayer() && this.gameObject.tag == "Player 2")
+        {
+            speed = MaxSpeed * .5f;
+        }
+        else
+        {
+            //speed = MaxSpeed;
+        }
+
     }
 
     bool IsGrounded()
     {
         
-        return Physics2D.OverlapCircle(GroundCheck.position, .2f, GroundLayer);
+        return Physics2D.OverlapCircle(GroundCheck.position, 1f, GroundLayer);
         
     }
 
     bool IsGroundedOnPlayer()
     {
 
-        return Physics2D.OverlapCircle(GroundCheck.position - offset, 1f, PlayerLayer);
+        //return Physics2D.OverlapCircle(GroundCheck.position - offset, 1f, PlayerLayer);
+        return Physics2D.OverlapCircle(GroundCheck.position, 1f, PlayerLayer);
     }
 
     void Flip()
@@ -234,7 +272,7 @@ public class Player_Movement : MonoBehaviour
 
         }
 
-
+        
 
 
 
