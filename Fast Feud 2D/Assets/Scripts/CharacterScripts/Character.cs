@@ -7,89 +7,89 @@ using UnityEngine.UI;
 public abstract class Character
 {
     [SerializeField]
-    protected uint maxHealth { get; set; }
-    protected uint health { get; set; }
-    protected bool isAlive { get; set; }
+    public uint maxHealth { get; set; }
+    public uint health { get; set; }
+    public bool isAlive { get; set; }
     [SerializeField]
-    protected float charSpeed { get; set; }
+    public float charSpeed { get; set; }
     [SerializeField]
-    protected int jumpHeight { get; set; }
+    public int jumpHeight { get; set; }
     [SerializeField]
-    protected Sprite characterPNG { get; set; }
+    public Sprite characterPNG { get; set; }
 
 
-    protected bool isStunned { get; set; }
-    protected bool isBlocking { get; set; }
-    protected bool isCrouching { get; set; }
-    protected bool isJumping { get; set; }
-    protected bool isAttacking { get; set; }
-    protected bool isSupering { get; set; }
-    protected bool isSuperInvicibleSU { get; set; }
+    public bool isStunned { get; set; }
+    public bool isBlocking { get; set; }
+    public bool isCrouching { get; set; }
+    public bool isJumping { get; set; }
+    public bool isAttacking { get; set; }
+    public bool isSupering { get; set; }
+    public bool isSuperInvicibleSU { get; set; }
 
     //## LIGHT ATTACK FRAME DATA ##
     [SerializeField]
-    protected int lightAttackSUF { get; set; }
+    public int lightAttackSUF { get; set; }
     [SerializeField]
-    protected int lightAttackACF { get;  set; }
+    public int lightAttackACF { get;  set; }
     [SerializeField]
-    protected int lightAttackREF { get; set; }
+    public int lightAttackREF { get; set; }
     //## HEAVY ATTACK FRAME DATA ##
     [SerializeField]
-    protected int heavyAttackSUF { get;  set; }
+    public int heavyAttackSUF { get;  set; }
     [SerializeField]
-    protected int heavyAttackACF { get; set; }
+    public int heavyAttackACF { get; set; }
     [SerializeField]
-    protected int heavyAttackREF { get; set; }
+    public int heavyAttackREF { get; set; }
     //## KICK FRAME DATA ##
     [SerializeField]
-    protected int kickSUF { get;  set; }
+    public int kickSUF { get;  set; }
     [SerializeField]
-    protected int kickACF { get;  set; }
+    public int kickACF { get;  set; }
     [SerializeField]
-    protected int kickREF { get;  set; }
+    public int kickREF { get;  set; }
     //## JUMP FRAME DATA ##
     [SerializeField]
-    protected int jumpSUF { get;  set; }
+    public int jumpSUF { get;  set; }
     [SerializeField]
-    protected int jumpACF { get;  set; }
+    public int jumpACF { get;  set; }
     [SerializeField]
-    protected int jumpREF { get;  set; }
+    public int jumpREF { get;  set; }
     //## SUPER ATTACK FRAME DATA ##
     [SerializeField]
-    protected int superAttackSUF { get;  set; }
+    public int superAttackSUF { get;  set; }
     [SerializeField]
-    protected int superAttackACF { get;  set; }
+    public int superAttackACF { get;  set; }
     [SerializeField]
-    protected int superAttackREF { get;  set; }
+    public int superAttackREF { get;  set; }
     //## CROUCHING LIGHT ATTACK FRAME DATA ##
     [SerializeField]
-    protected int crouchLightAttackSUF { get;  set; }
+    public int crouchLightAttackSUF { get;  set; }
     [SerializeField]
-    protected int crouchLightAttackACF { get;  set; }
+    public int crouchLightAttackACF { get;  set; }
     [SerializeField]
-    protected int crouchLightAttackREF { get;  set; }
+    public int crouchLightAttackREF { get;  set; }
     //## CROUCHING HEAVY ATTACK FRAME DATA ##
     [SerializeField]
-    protected int crouchHeavyAttackSUF { get;  set; }
+    public int crouchHeavyAttackSUF { get;  set; }
     [SerializeField]
-    protected int crouchHeavyAttackACF { get;  set; }
+    public int crouchHeavyAttackACF { get;  set; }
     [SerializeField]
-    protected int crouchHeavyAttackREF { get;  set; }
+    public int crouchHeavyAttackREF { get;  set; }
     //## CROUCHING KICK FRAME DATA ##
     [SerializeField]
-    protected int crouchKickSUF { get;  set; }
+    public int crouchKickSUF { get;  set; }
     [SerializeField]
-    protected int crouchKickACF { get;  set; }
+    public int crouchKickACF { get;  set; }
     [SerializeField]
-    protected int crouchKickREF { get;  set; }
+    public int crouchKickREF { get;  set; }
     //## ATTACK DAMAGE NUMBERS ##
-    protected int lightAttackDamage;
-    protected int heavyAttackDamage;
-    protected int kickAttackDamage;
-    protected int cLightAttackDamage;
-    protected int cHeavyAttackDamage;
-    protected int cKickAttackDamage;
-    protected int superAttackDamage;
+    public int lightAttackDamage;
+    public int heavyAttackDamage;
+    public int kickAttackDamage;
+    public int cLightAttackDamage;
+    public int cHeavyAttackDamage;
+    public int cKickAttackDamage;
+    public int superAttackDamage;
     //## ABSTRACT ATTACK METHODS ##
     public abstract void doLightAttack();
     public abstract void doHeavyAttack();

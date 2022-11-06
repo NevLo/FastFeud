@@ -7,6 +7,9 @@ public class Player_Attacks : MonoBehaviour
     public Player_Mechanics stun;
     public GameObject HeavyAttack;
     public GameObject LightAttack;
+
+    private Character p1 = CharacterSelect.player1;
+    private Character p2 = CharacterSelect.player2;
     public bool attacking;
     public float cooldown = 0.25f;
     public float timer;
@@ -109,13 +112,17 @@ public class Player_Attacks : MonoBehaviour
             attacking = true;
             LightAttackTrue = true;
 
+            //PassedStartTimer = p1.lightAttackSUF;
+            //PassedActiveTimer = p1.lightAttackACF;
+            //PassedRecoveryTimer = p1.lightAttackREF;
+
             PassedStartTimer = LightStartTimer;
             PassedActiveTimer = LightActiveTimer;
             PassedRecoveryTimer = LightRecoveryTimer;
 
-            PassedStartDelay = LightStartDelay;
-            PassedActiveDelay = LightActiveDelay;
-            PassedRecoveryDelay = LightRecoveryDelay;
+            PassedStartDelay = p1.lightAttackSUF;
+            PassedActiveDelay = p1.lightAttackACF;
+            PassedRecoveryDelay = p1.lightAttackREF;
     
 }
 
@@ -128,10 +135,14 @@ public class Player_Attacks : MonoBehaviour
             PassedActiveTimer = HeavyActiveTimer;
             PassedRecoveryTimer = HeavyRecoveryTimer;
 
-            PassedStartDelay = HeavyStartDelay;
-            PassedActiveDelay = HeavyActiveDelay;
-            PassedRecoveryDelay = HeavyRecoveryDelay;
-            
+            PassedStartDelay = p1.heavyAttackSUF;
+            PassedActiveDelay = p1.heavyAttackACF;
+            PassedRecoveryDelay = p1.heavyAttackREF;
+
+            //PassedStartDelay = HeavyStartDelay;
+            //PassedActiveDelay = HeavyActiveDelay;
+            //PassedRecoveryDelay = HeavyRecoveryDelay;
+
         }
 
         ////////////////////////////////////////////////////////////////////////
@@ -145,9 +156,13 @@ public class Player_Attacks : MonoBehaviour
             PassedActiveTimer = LightActiveTimer;
             PassedRecoveryTimer = LightRecoveryTimer;
 
-            PassedStartDelay = LightStartDelay;
-            PassedActiveDelay = LightActiveDelay;
-            PassedRecoveryDelay = LightRecoveryDelay;
+            PassedStartDelay = p2.lightAttackSUF;
+            PassedActiveDelay = p2.lightAttackACF;
+            PassedRecoveryDelay = p2.lightAttackREF;
+
+            //PassedStartDelay = LightStartDelay;
+            //PassedActiveDelay = LightActiveDelay;
+            //PassedRecoveryDelay = LightRecoveryDelay;
         }
 
         if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
@@ -159,9 +174,13 @@ public class Player_Attacks : MonoBehaviour
             PassedActiveTimer = HeavyActiveTimer;
             PassedRecoveryTimer = HeavyRecoveryTimer;
 
-            PassedStartDelay = HeavyStartDelay;
-            PassedActiveDelay = HeavyActiveDelay;
-            PassedRecoveryDelay = HeavyRecoveryDelay;
+            PassedStartDelay = p2.heavyAttackSUF;
+            PassedActiveDelay = p2.heavyAttackACF;
+            PassedRecoveryDelay = p2.heavyAttackREF;
+
+            //PassedStartDelay = HeavyStartDelay;
+            //PassedActiveDelay = HeavyActiveDelay;
+            //PassedRecoveryDelay = HeavyRecoveryDelay;
         }
 
         
