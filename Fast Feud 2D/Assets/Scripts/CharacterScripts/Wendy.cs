@@ -23,13 +23,13 @@ public class Wendy : Character
         isSuperInvicibleSU = true;
 
         //## LIGHT ATTACK FRAME DATA ##
-        lightAttackSUF = 0;
-        lightAttackACF = 0;
-        lightAttackREF = 0;
+        lightAttackSUF = 2;
+        lightAttackACF = 1;
+        lightAttackREF = 2;
         //## HEAVY ATTACK FRAME DATA ##
-        heavyAttackSUF = 0;
-        heavyAttackACF = 0;
-        heavyAttackREF = 0;
+        heavyAttackSUF = 3;
+        heavyAttackACF = 3;
+        heavyAttackREF = 3;
         //## KICK FRAME DATA ##
         kickSUF = 0;
         kickACF = 0;
@@ -55,8 +55,8 @@ public class Wendy : Character
         crouchKickACF = 0;
         crouchKickREF = 0;
         //## ATTACK DAMAGE NUMBERS ##
-        lightAttackDamage = 0;
-        heavyAttackDamage = 0;
+        lightAttackDamage = 2;
+        heavyAttackDamage = 3;
         kickAttackDamage = 0;
         cLightAttackDamage = 0;
         cHeavyAttackDamage = 0;

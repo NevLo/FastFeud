@@ -9,6 +9,7 @@ public class End_Game_Buttons : MonoBehaviour
 
     public Data PlayerData;
     
+    
     void Start()
     {
     }
@@ -56,4 +57,6 @@ public class End_Game_Buttons : MonoBehaviour
         ResetData();
         Application.Quit();
     }
+
+
 }

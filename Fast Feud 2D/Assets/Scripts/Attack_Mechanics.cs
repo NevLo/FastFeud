@@ -6,7 +6,7 @@ public class Attack_Mechanics : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float damage;
+    float damage;
     public float StartDelay;
     public float ActiveDelay;
     public float RecoveryDelay;
@@ -15,10 +15,35 @@ public class Attack_Mechanics : MonoBehaviour
     private float ActiveTimer;
     private float RecoveryTimer;
 
+    private Character p1 = CharacterSelect.player1;
+    private Character p2 = CharacterSelect.player2;
+    [SerializeField]
+    private bool activeCharIsP1;
+
     public Player_Mechanics blocking;
 
     void Start()
     {
+
+        if(gameObject.tag == "HAP1")
+        {
+            damage = p1.heavyAttackDamage;
+        }
+
+        else if (gameObject.tag == "HAP2")
+        {
+            damage = p2.heavyAttackDamage;
+        }
+
+        else if (gameObject.tag == "LAP1")
+        {
+            damage = p1.lightAttackDamage;
+        }
+
+        else if (gameObject.tag == "LAP2")
+        {
+            damage = p2.lightAttackDamage;
+        }
         //this.gameObject.GetComponent<Collider2D>().enabled = false;
         //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         //blocking = gameObject.GetComponent<Player_Mechanics>();
