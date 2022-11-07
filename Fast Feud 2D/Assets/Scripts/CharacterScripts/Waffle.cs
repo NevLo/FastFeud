@@ -21,7 +21,7 @@ public class Waffle : Character
         isAttacking = false;
         isSupering = false;
         isSuperInvicibleSU = true;
-
+        isAnimatable = true;
         //## LIGHT ATTACK FRAME DATA ##
         lightAttackSUF = 10;
         lightAttackACF = 10;

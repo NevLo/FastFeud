@@ -21,6 +21,7 @@ public class Wendy : Character
         isAttacking = false;
         isSupering = false;
         isSuperInvicibleSU = true;
+        isAnimatable = true;
 
         //## LIGHT ATTACK FRAME DATA ##
         lightAttackSUF = 2;

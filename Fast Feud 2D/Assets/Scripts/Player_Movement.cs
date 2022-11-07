@@ -29,7 +29,7 @@ public class Player_Movement : MonoBehaviour
     public float JumpCooldown;
     private bool IsFacingRight = true;
     private Vector3 offset;
-    
+       
 
     // Start is called before the first frame update
     void Start()
@@ -135,6 +135,7 @@ public class Player_Movement : MonoBehaviour
             IsCrouching = false;
             //jumping = true;
             rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
+            
         }
 
         if (Input.GetKey(KeyCode.S) && !jumping && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)

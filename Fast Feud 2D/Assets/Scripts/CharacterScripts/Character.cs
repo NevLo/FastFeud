@@ -17,6 +17,7 @@ public abstract class Character
     [SerializeField]
     public Sprite characterPNG { get; set; }
 
+    public bool isAnimatable { get; set; } = false;
 
     public bool isStunned { get; set; }
     public bool isBlocking { get; set; }
