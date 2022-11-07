@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player_Mechanics : MonoBehaviour
@@ -21,6 +22,7 @@ public class Player_Mechanics : MonoBehaviour
     public float HitStunTimer;
     public float BlockStunTimer;
     public Data WhoWon;
+    public Round_Timer RoundTimer;
     public bool doWinCheck = true;
     /// <summary>
     /// ///////////////////////////////////////////////////////
@@ -194,11 +196,44 @@ public class Player_Mechanics : MonoBehaviour
             IsPaused = false;
         }*/
 
-        if (PlayerHealth <= 0 && doWinCheck)
+        if ((PlayerHealth <= 0 || RoundTimer.timer <= 0 ) && doWinCheck)
         {
+            if(OtherPlayer.tag == "Player 1" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
+            {
+                WhoWon.PlayerWin = 1;
+                WhoWon.HasSomeoneWon = true;
+                WhoWon.Player1Wins++;
+            }
+
+            else if(OtherPlayer.tag == "Player 2" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
+            {
+                WhoWon.PlayerWin = 2;
+                WhoWon.HasSomeoneWon = true;
+                WhoWon.Player2Wins++;
+            }
+
+            /*else if (OtherPlayer.tag == "Player 1" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth < PlayerHealth)
+            {
+                WhoWon.PlayerWin = 2;
+                WhoWon.HasSomeoneWon = true;
+                WhoWon.Player2Wins++;
+            }
+
+            else if (OtherPlayer.tag == "Player 2" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth < PlayerHealth)
+            {
+                WhoWon.PlayerWin = 1;
+                WhoWon.HasSomeoneWon = true;
+                WhoWon.Player1Wins++;
+            }*/
+
+            else if (OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth == PlayerHealth)
+            {
+                SceneManager.LoadScene("FightStage_Scene");
+            }
+
             this.gameObject.SetActive(false);
 
-            if (this.gameObject.tag == "Player 1")
+            /*if (this.gameObject.tag == "Player 1")
             {
                 WhoWon.PlayerWin = 2;
                 WhoWon.HasSomeoneWon = true;
@@ -211,7 +246,7 @@ public class Player_Mechanics : MonoBehaviour
                 WhoWon.HasSomeoneWon = true;
                 WhoWon.Player1Wins++;
 
-            }
+            }*/
             doWinCheck = false;
         }
 

@@ -12,6 +12,7 @@ public class Round_Screen : MonoBehaviour
     public Data WhoWon;
     public bool RoundStart;
     public bool RoundStart2;
+    public bool StartRoundTimer;
     public float RoundStartDelay;
     public float RoundStartTimer;
     public GameObject Wall1;
@@ -21,6 +22,7 @@ public class Round_Screen : MonoBehaviour
     {
         RoundStart = false;
         RoundStart2 = false;
+        StartRoundTimer = false;
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class Round_Screen : MonoBehaviour
                 RoundStart2 = true;
                 RoundStart = false;
                 RoundStartTimer = 0;
+                StartRoundTimer = true;
                 Wall1.SetActive(false);
                 Wall2.SetActive(false);
             }
