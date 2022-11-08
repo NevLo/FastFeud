@@ -111,6 +111,7 @@ public abstract class Character
     public abstract void doJumpAnim();
     public abstract void doWalkAnim();
     public abstract void doBlockAnim();
+    public void doBlockAnim(Animator a) { }
     public abstract void doCrouchAnim();
 
     public bool isHighHittable()

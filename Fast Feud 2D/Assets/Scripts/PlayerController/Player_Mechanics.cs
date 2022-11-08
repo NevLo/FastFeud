@@ -116,6 +116,7 @@ public class Player_Mechanics : MonoBehaviour
         if (BlockKey.BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
         {
             IsBlocking = true;
+            p1.doBlockAnim(gameObject.GetComponent<Animator>());
 
             if (BlockKey.IsCrouching)
             {
@@ -129,7 +130,7 @@ public class Player_Mechanics : MonoBehaviour
         else if (BlockKey.BlockKeyRight && Input.GetKey(KeyCode.D) && gameObject.tag == "Player 1")
         {
             IsBlocking = true;
-
+            p1.doBlockAnim(gameObject.GetComponent<Animator>());
             if (BlockKey.IsCrouching)
             {
                 IsBlockingLow = true;
