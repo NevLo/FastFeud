@@ -34,6 +34,8 @@ public class Apply_Player_Sprite : MonoBehaviour
 
         var p1anim = player1.GetComponent<Animator>();
         var p2anim = player2.GetComponent<Animator>();
+        player1.tag = "Player 1";
+        player2.tag = "Player 2";
 
         /*
         WendySprite_idle = Resources.Load<AnimationClip>("wendy_idle.anim");
@@ -53,7 +55,7 @@ public class Apply_Player_Sprite : MonoBehaviour
         Character p2 = CharacterSelect.player2;
 
 
-        GameObject wendyinst = Instantiate(wendyprefab);
+        //GameObject wendyinst = Instantiate(wendyprefab);
 
 
         switch(p1.ToString())
@@ -73,10 +75,10 @@ public class Apply_Player_Sprite : MonoBehaviour
                 player1.GetComponent<SpriteRenderer>().sprite = WendySprite;
                 p1anim.Play("idle");
 
-                Debug.Log(wendyinst.transform.position);
-                Debug.Log(player1.transform.position);
-                wendyinst.transform.position = player1.transform.position;
-                Debug.Log(wendyinst.transform.position);
+                //Debug.Log(wendyinst.transform.position);
+                //Debug.Log(player1.transform.position);
+                //wendyinst.transform.position = player1.transform.position;
+                //Debug.Log(wendyinst.transform.position);
                 //player1.SetActive(false);
                 break;
             case "Jack":

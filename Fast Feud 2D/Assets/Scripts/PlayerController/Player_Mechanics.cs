@@ -21,7 +21,7 @@ public class Player_Mechanics : MonoBehaviour
     public bool BlockStun;
     public float HitStunTimer;
     public float BlockStunTimer;
-    public Data WhoWon;
+    public Data[] WhoWon;
     public Round_Timer RoundTimer;
     public bool doWinCheck = true;
     /// <summary>
@@ -55,6 +55,22 @@ public class Player_Mechanics : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         BlockKey = this.gameObject.GetComponent<Player_Mechanics>();
+
+        if(gameObject.tag == "Player 1")
+        {
+            OtherPlayer = GameObject.FindWithTag("Player 2");
+            WhoWon = Resources.FindObjectsOfTypeAll<Data>();
+            RoundTimer = GameObject.Find("Health UI/Timer").GetComponent<Round_Timer>();
+
+        }
+
+        if (gameObject.tag == "Player 2")
+        {
+            OtherPlayer = GameObject.FindWithTag("Player 1");
+            WhoWon = Resources.FindObjectsOfTypeAll<Data>();
+            RoundTimer = GameObject.Find("Health UI/Timer").GetComponent<Round_Timer>();
+        }
+
 
         ///////////////////////////////////////////////////////////
         ///
@@ -201,16 +217,16 @@ public class Player_Mechanics : MonoBehaviour
         {
             if(OtherPlayer.tag == "Player 1" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
             {
-                WhoWon.PlayerWin = 1;
-                WhoWon.HasSomeoneWon = true;
-                WhoWon.Player1Wins++;
+                WhoWon[0].PlayerWin = 1;
+                WhoWon[0].HasSomeoneWon = true;
+                WhoWon[0].Player1Wins++;
             }
 
             else if(OtherPlayer.tag == "Player 2" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
             {
-                WhoWon.PlayerWin = 2;
-                WhoWon.HasSomeoneWon = true;
-                WhoWon.Player2Wins++;
+                WhoWon[0].PlayerWin = 2;
+                WhoWon[0].HasSomeoneWon = true;
+                WhoWon[0].Player2Wins++;
             }
 
             /*else if (OtherPlayer.tag == "Player 1" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth < PlayerHealth)
