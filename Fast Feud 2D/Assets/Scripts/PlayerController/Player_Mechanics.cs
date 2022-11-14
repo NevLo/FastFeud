@@ -14,6 +14,8 @@ public class Player_Mechanics : MonoBehaviour
     public Player_Mechanics BlockKey;
     public float PlayerMaxHealth;
     public float PlayerHealth;
+    public PlayerBar p1Bar;
+    public PlayerBar p2Bar;
     public string PlayerName;
     public bool IsBlockingLow;
     public bool IsBlocking;
@@ -53,22 +55,48 @@ public class Player_Mechanics : MonoBehaviour
 
     void Start()
     {
+        
+
+
+
         Application.targetFrameRate = 60;
         BlockKey = this.gameObject.GetComponent<Player_Mechanics>();
 
         if(gameObject.tag == "Player 1")
         {
-            OtherPlayer = GameObject.FindWithTag("Player 2");
+            //OtherPlayer = GameObject.FindWithTag("waffle2");
             WhoWon = Resources.FindObjectsOfTypeAll<Data>();
             RoundTimer = GameObject.Find("Health UI/Timer").GetComponent<Round_Timer>();
+            p1Bar = GameObject.Find("Health UI/Player 1 HP").GetComponent<PlayerBar>();
+            p1Bar.PlayerHealth = this.gameObject.GetComponent<Player_Mechanics>();
+
+            /*do
+            {
+
+                if (GameObject.Find("Players").GetComponent<Apply_Player_Sprite>().gameObjectsSet)
+                {
+                    OtherPlayer = GameObject.Find("Players").GetComponent<Apply_Player_Sprite>().player2;
+                }
+            } while (!GameObject.Find("Players").GetComponent<Apply_Player_Sprite>().gameObjectsSet);*/
 
         }
 
         if (gameObject.tag == "Player 2")
         {
-            OtherPlayer = GameObject.FindWithTag("Player 1");
+            //OtherPlayer = GameObject.FindWithTag("waffle1");
             WhoWon = Resources.FindObjectsOfTypeAll<Data>();
             RoundTimer = GameObject.Find("Health UI/Timer").GetComponent<Round_Timer>();
+            p2Bar = GameObject.Find("Health UI/Player 2 HP").GetComponent<PlayerBar>();
+            p2Bar.PlayerHealth = this.gameObject.GetComponent<Player_Mechanics>();
+            /*do
+            {
+                if (GameObject.Find("Players").GetComponent<Apply_Player_Sprite>().gameObjectsSet)
+                {
+                    OtherPlayer = GameObject.Find("Players").GetComponent<Apply_Player_Sprite>().player1;
+                }
+            } while (!GameObject.Find("Players").GetComponent<Apply_Player_Sprite>().gameObjectsSet);*/
+
+
         }
 
 
@@ -107,6 +135,18 @@ public class Player_Mechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+        if(gameObject.tag == "waffle1")
+        {
+            OtherPlayer = GameObject.FindGameObjectWithTag("waffle2");
+        }
+
+        if (gameObject.tag == "waffle2")
+        {
+            OtherPlayer = GameObject.FindGameObjectWithTag("waffle1");
+        }
+        */
+
         if (BlockStun == true)
         {
             BlockStunTimer++;
@@ -245,7 +285,7 @@ public class Player_Mechanics : MonoBehaviour
 
             else if (OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth == PlayerHealth)
             {
-                SceneManager.LoadScene("FightStage_Scene");
+                //SceneManager.LoadScene("FightStage_Scene");
             }
 
             this.gameObject.SetActive(false);
@@ -292,7 +332,7 @@ public class Player_Mechanics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.A)))
+        if (Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1"))
         {
 
             if (IsGrounded())
@@ -311,9 +351,9 @@ public class Player_Mechanics : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.D)))
+        if (Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1"))
         {
-
+            
             if (IsGrounded())
             {
                 rb.velocity = new Vector2(1 * speed, 0);
@@ -354,7 +394,7 @@ public class Player_Mechanics : MonoBehaviour
         // Debug.Log(turnAmount);
         // rb.AddForce(Vector2.left * speed * turnAmount * -20);
 
-        if (Input.GetKey(KeyCode.LeftArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.LeftArrow)))
+        if (Input.GetKey(KeyCode.LeftArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.LeftArrow)) && this.gameObject.tag == "Player 2")
         //if (Input.GetInput("Horzontal") && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
@@ -374,7 +414,7 @@ public class Player_Mechanics : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.RightArrow)))
+        if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun || (IsGroundedOnPlayer() && Input.GetKey(KeyCode.RightArrow)) && this.gameObject.tag == "Player 2")
         {
             IsCrouching = false;
             if (IsGrounded())

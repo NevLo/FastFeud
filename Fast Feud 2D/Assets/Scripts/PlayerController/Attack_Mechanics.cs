@@ -6,7 +6,7 @@ public class Attack_Mechanics : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    float damage;
+    public float damage;
     public float StartDelay;
     public float ActiveDelay;
     public float RecoveryDelay;

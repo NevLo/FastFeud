@@ -27,7 +27,7 @@ public class Jack : Character
         lightAttackACF = 5;
         lightAttackREF = 5;
         //## HEAVY ATTACK FRAME DATA ##
-        heavyAttackSUF = 15;
+        heavyAttackSUF = 150;
         heavyAttackACF = 15;
         heavyAttackREF = 15;
         //## KICK FRAME DATA ##

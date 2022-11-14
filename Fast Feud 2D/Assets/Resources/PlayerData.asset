@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   PlayerWin: 0
+  HasSomeoneWon: 0
+  HasSomeoneWonTwice: 0
+  HasFightStarted: 0
+  Player1Wins: 0
+  Player2Wins: 0
