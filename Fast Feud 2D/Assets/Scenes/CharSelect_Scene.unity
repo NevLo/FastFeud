@@ -971,7 +971,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1344890}
         m_TargetAssemblyTypeName: CharacterSelect, Assembly-CSharp
-        m_MethodName: char4
+        m_MethodName: char9
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3381,7 +3381,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1344890}
         m_TargetAssemblyTypeName: CharacterSelect, Assembly-CSharp
-        m_MethodName: char3
+        m_MethodName: char6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
