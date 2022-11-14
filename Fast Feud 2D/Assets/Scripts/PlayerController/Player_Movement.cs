@@ -102,12 +102,16 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
+        Debug.Log("test");
+        Debug.Log(gameObject.GetComponent<Animator>().name.ToString());
+        if (Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
             
             if (IsGrounded() || IsGroundedOnPlayer())
             {
                 rb.velocity = new Vector2(-1 * speed, 0);
+                var animator = gameObject.GetComponent<Animator>();
+                animator.SetBool("IsWalking", true);
             }
 
             /*else
@@ -122,6 +126,8 @@ public class Player_Movement : MonoBehaviour
             if (IsGrounded() || IsGroundedOnPlayer())
             {
                 rb.velocity = new Vector2(1 * speed, 0);
+                var animator = gameObject.GetComponent<Animator>();
+                animator.SetBool("IsWalking", true);
             }
 
             /*else
@@ -135,17 +141,22 @@ public class Player_Movement : MonoBehaviour
             IsCrouching = false;
             //jumping = true;
             rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
-            
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsJumping", true);
+
         }
 
         if (Input.GetKey(KeyCode.S) && !jumping && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = true;
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsCrouching", true);
         }
 
         else if(!Input.GetKeyUp(KeyCode.S) && this.gameObject.tag == "Player 1" && !stun.BlockStun && !stun.HitStun)
         {
-            IsCrouching = false;
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsCrouching", false);
         }
 
 
@@ -162,6 +173,8 @@ public class Player_Movement : MonoBehaviour
             if (IsGrounded() || IsGroundedOnPlayer())
             {
                 rb.velocity = new Vector2(-1 * speed, 0);
+                var animator = gameObject.GetComponent<Animator>();
+                animator.SetBool("IsWalking", true);
             }
 
             /*else
@@ -176,6 +189,8 @@ public class Player_Movement : MonoBehaviour
             if (IsGrounded() || IsGroundedOnPlayer())
             {
                 rb.velocity = new Vector2(1 * speed, 0);
+                var animator = gameObject.GetComponent<Animator>();
+                animator.SetBool("IsWalking", true);
             }
             
             /*else
@@ -196,17 +211,23 @@ public class Player_Movement : MonoBehaviour
             IsCrouching = false;
             //jumping = true;
             rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsJumping", true);
 
         }
 
         if (Input.GetKey(KeyCode.DownArrow) && !jumping && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = true;
+            var animator = GetComponent<Animator>();
+            animator.SetBool("IsCrouching", true);
         }
 
         else if (!Input.GetKeyUp(KeyCode.DownArrow) && this.gameObject.tag == "Player 2" && !stun.BlockStun && !stun.HitStun)
         {
             IsCrouching = false;
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsCrouching", false);
         }
 
         if(this.gameObject != null)

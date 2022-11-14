@@ -799,15 +799,15 @@ GameObject:
   m_Component:
   - component: {fileID: 6984533856626589262}
   - component: {fileID: 6984533856626589263}
-  - component: {fileID: 6984533856626589259}
+  - component: {fileID: -73175015838980019}
   - component: {fileID: 6984533856626589260}
   - component: {fileID: 6984533856626589261}
-  - component: {fileID: 6984533856626589257}
   - component: {fileID: 6984533856626589258}
   - component: {fileID: -4892664796013998026}
   - component: {fileID: -2367733693841386929}
+  - component: {fileID: 570066445480663951}
   m_Layer: 0
-  m_Name: waffle
+  m_Name: wendy
   m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -876,7 +876,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f73a7b8278f5afd992862be296db20e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9845e448df991fb88b3319648191e06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -887,7 +887,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6984533856626589259
+--- !u!114 &-73175015838980019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -899,25 +899,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 6984533855624681434}
+  m_RootBone: {fileID: 4136637808334109643, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
   m_BoneTransforms:
-  - {fileID: 6984533855624681434}
-  - {fileID: 6984533855462380270}
-  - {fileID: 6984533856776550115}
-  - {fileID: 6984533855216761073}
-  - {fileID: 6984533855994803755}
-  - {fileID: 6984533855861076699}
-  - {fileID: 6984533856663488225}
-  - {fileID: 6984533856039554613}
-  - {fileID: 6984533856610465089}
-  - {fileID: 6984533854770945222}
-  - {fileID: 6984533855202464739}
-  - {fileID: 6984533855616817412}
-  - {fileID: 6984533854796536423}
-  - {fileID: 6984533856768633308}
+  - {fileID: 4136637808334109643, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 3175057184725917125, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 4943219709504907393, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 6477695222198640118, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 6856471611760710687, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 3870110373842956964, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 7991677166316443873, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 7848449869259956564, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 723850084941813765, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 4446480149377163872, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 5863167072658259850, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 6081486202040025555, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 7182631103153915601, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 8099390545250684890, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 504312965094235938, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 4493340204571077693, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 4847675527217953316, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 3946687843873685576, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
   m_Bounds:
-    m_Center: {x: 0.17207366, y: -0.039768696, z: 0}
-    m_Extent: {x: 0.7986737, y: 0.8810384, z: 0}
+    m_Center: {x: -0.35892165, y: 0.088657975, z: 0}
+    m_Extent: {x: 0.50338936, y: 1.4389907, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 1
@@ -959,7 +963,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.16, y: 2.33}
+    oldSize: {x: 1.83, y: 2.75}
     newSize: {x: 2.16, y: 2.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -968,27 +972,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6984533856626589257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6984533856626589264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Solvers:
-  - {fileID: 6984533855833786153}
-  - {fileID: 6984533856217846083}
-  m_Weight: 1
-  m_SolverEditorData:
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
 --- !u!95 &6984533856626589258
 Animator:
   serializedVersion: 4
@@ -999,7 +982,7 @@ Animator:
   m_GameObject: {fileID: 6984533856626589264}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d0b4cddd9e4c0a543b68653aabdfa922, type: 2}
+  m_Controller: {fileID: 9100000, guid: 858b17aee068c5105b5787cd9c5f06d7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1087,6 +1070,33 @@ MonoBehaviour:
   PassedStartDelay: 0
   PassedActiveDelay: 0
   PassedRecoveryDelay: 0
+--- !u!114 &570066445480663951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984533856626589264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Solvers:
+  - {fileID: 7084077595361083805, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 494484684836530601, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 3143412410185962857, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  - {fileID: 1247283711066781986, guid: f14352a70b12ec1bbbba6fe3ca1163ce, type: 3}
+  m_Weight: 1
+  m_SolverEditorData:
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
 --- !u!1 &6984533856663488226
 GameObject:
   m_ObjectHideFlags: 0

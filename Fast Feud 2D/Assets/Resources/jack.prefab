@@ -807,7 +807,7 @@ GameObject:
   - component: {fileID: -4892664796013998026}
   - component: {fileID: -2367733693841386929}
   m_Layer: 0
-  m_Name: waffle
+  m_Name: jack
   m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -876,7 +876,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f73a7b8278f5afd992862be296db20e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec1bfcb1b3404d2b4a8a06b77463b330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -899,28 +899,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 6984533855624681434}
+  m_RootBone: {fileID: 8209653666486236961, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
   m_BoneTransforms:
-  - {fileID: 6984533855624681434}
-  - {fileID: 6984533855462380270}
-  - {fileID: 6984533856776550115}
-  - {fileID: 6984533855216761073}
-  - {fileID: 6984533855994803755}
-  - {fileID: 6984533855861076699}
-  - {fileID: 6984533856663488225}
-  - {fileID: 6984533856039554613}
-  - {fileID: 6984533856610465089}
-  - {fileID: 6984533854770945222}
-  - {fileID: 6984533855202464739}
-  - {fileID: 6984533855616817412}
-  - {fileID: 6984533854796536423}
-  - {fileID: 6984533856768633308}
+  - {fileID: 8209653666486236961, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 7841220858746233431, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 8689911122552446977, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 3459904973232801620, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 7278417843149374756, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 2887626333553473882, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 6305727738996476987, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 2502396119757265915, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 2591500549814888131, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 1469409231063714712, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 7913870920629323461, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 7860685181781619023, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 5645277283554005514, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 4205491664998460640, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
+  - {fileID: 2823060203793448997, guid: 5e668ec8ec81b65d8aa667435c6a83a2, type: 3}
   m_Bounds:
-    m_Center: {x: 0.17207366, y: -0.039768696, z: 0}
-    m_Extent: {x: 0.7986737, y: 0.8810384, z: 0}
+    m_Center: {x: 0.010063291, y: 0.08918476, z: 0}
+    m_Extent: {x: 0.32187605, y: 0.54304004, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
-  m_AutoRebind: 1
+  m_AutoRebind: 0
 --- !u!50 &6984533856626589260
 Rigidbody2D:
   serializedVersion: 4
@@ -959,7 +960,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.16, y: 2.33}
+    oldSize: {x: 1.115, y: 1.13}
     newSize: {x: 2.16, y: 2.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -999,7 +1000,7 @@ Animator:
   m_GameObject: {fileID: 6984533856626589264}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d0b4cddd9e4c0a543b68653aabdfa922, type: 2}
+  m_Controller: {fileID: 9100000, guid: 78eb84b015ea162c0b40d9e64e25fe9f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

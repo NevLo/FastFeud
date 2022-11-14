@@ -747,6 +747,8 @@ GameObject:
   - component: {fileID: 5558235999690299764}
   - component: {fileID: 2172128922950814379}
   - component: {fileID: 4459406657084587871}
+  - component: {fileID: 172994240889799844}
+  - component: {fileID: -3495642617247434444}
   m_Layer: 0
   m_Name: wendychar
   m_TagString: Untagged
@@ -912,6 +914,83 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &172994240889799844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900280602347456331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebfd23dec2dbda49858778da0b08c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stun: {fileID: 0}
+  HeavyAttack: {fileID: 0}
+  LightAttack: {fileID: 0}
+  attacking: 0
+  cooldown: 0.25
+  timer: 0
+  LightStartDelay: 0
+  LightActiveDelay: 0
+  LightRecoveryDelay: 0
+  HeavyStartDelay: 0
+  HeavyActiveDelay: 0
+  HeavyRecoveryDelay: 0
+  PassedStartDelay: 0
+  PassedActiveDelay: 0
+  PassedRecoveryDelay: 0
+--- !u!114 &-3495642617247434444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900280602347456331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cffdc09939eb4780c94b1ee9eb5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OtherPlayer: {fileID: 0}
+  PauseScreen: {fileID: 0}
+  BlockKey: {fileID: 0}
+  PlayerMaxHealth: 0
+  PlayerHealth: 0
+  p1Bar: {fileID: 0}
+  p2Bar: {fileID: 0}
+  PlayerName: 
+  IsBlockingLow: 0
+  IsBlocking: 0
+  HitStun: 0
+  BlockStun: 0
+  HitStunTimer: 0
+  BlockStunTimer: 0
+  WhoWon: []
+  RoundTimer: {fileID: 0}
+  doWinCheck: 1
+  rb: {fileID: 0}
+  stun: {fileID: 0}
+  MaxSpeed: 0
+  speed: 0
+  HorizontalMove: 0
+  DistToGround: 0
+  grounded: 0
+  GroundCheck: {fileID: 0}
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Grounded: 0
+  JumpSpeed: 0
+  BlockKeyLeft: 0
+  BlockKeyRight: 0
+  jumping: 0
+  IsCrouching: 0
+  JumpCooldown: 0
 --- !u!1 &6912638832752647053
 GameObject:
   m_ObjectHideFlags: 0

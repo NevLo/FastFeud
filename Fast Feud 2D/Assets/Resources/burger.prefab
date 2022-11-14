@@ -799,15 +799,15 @@ GameObject:
   m_Component:
   - component: {fileID: 6984533856626589262}
   - component: {fileID: 6984533856626589263}
-  - component: {fileID: 6984533856626589259}
   - component: {fileID: 6984533856626589260}
   - component: {fileID: 6984533856626589261}
   - component: {fileID: 6984533856626589257}
   - component: {fileID: 6984533856626589258}
   - component: {fileID: -4892664796013998026}
   - component: {fileID: -2367733693841386929}
+  - component: {fileID: 7742309629250200735}
   m_Layer: 0
-  m_Name: waffle
+  m_Name: burger
   m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -876,7 +876,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f73a7b8278f5afd992862be296db20e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f859f28b2eb7596082af56a4bcd840a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -887,40 +887,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6984533856626589259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6984533856626589264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 6984533855624681434}
-  m_BoneTransforms:
-  - {fileID: 6984533855624681434}
-  - {fileID: 6984533855462380270}
-  - {fileID: 6984533856776550115}
-  - {fileID: 6984533855216761073}
-  - {fileID: 6984533855994803755}
-  - {fileID: 6984533855861076699}
-  - {fileID: 6984533856663488225}
-  - {fileID: 6984533856039554613}
-  - {fileID: 6984533856610465089}
-  - {fileID: 6984533854770945222}
-  - {fileID: 6984533855202464739}
-  - {fileID: 6984533855616817412}
-  - {fileID: 6984533854796536423}
-  - {fileID: 6984533856768633308}
-  m_Bounds:
-    m_Center: {x: 0.17207366, y: -0.039768696, z: 0}
-    m_Extent: {x: 0.7986737, y: 0.8810384, z: 0}
-  m_UseBatching: 1
-  m_AlwaysUpdate: 1
-  m_AutoRebind: 1
 --- !u!50 &6984533856626589260
 Rigidbody2D:
   serializedVersion: 4
@@ -959,7 +925,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.16, y: 2.33}
+    oldSize: {x: 1.115, y: 1.13}
     newSize: {x: 2.16, y: 2.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -999,7 +965,7 @@ Animator:
   m_GameObject: {fileID: 6984533856626589264}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d0b4cddd9e4c0a543b68653aabdfa922, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1df7108a64cb4b760a2fc40bb3903f14, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1087,6 +1053,42 @@ MonoBehaviour:
   PassedStartDelay: 0
   PassedActiveDelay: 0
   PassedRecoveryDelay: 0
+--- !u!114 &7742309629250200735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984533856626589264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RootBone: {fileID: 9078642508555112620, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  m_BoneTransforms:
+  - {fileID: 9078642508555112620, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 1270480720213782739, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 1891392749784395155, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 819299912380125536, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 6525873755902517936, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 9162972261470523214, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 8674962741274695643, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 6142158498047001199, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 407928582470964290, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 536825235628580893, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 8816765255526127987, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 8873963754489534098, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 7863147669471618770, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 288888381719924055, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 511164793490750954, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 3957832009699409124, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  m_Bounds:
+    m_Center: {x: -0.21038246, y: -0.024335474, z: 0}
+    m_Extent: {x: 0.29954553, y: 0.39756286, z: 0}
+  m_UseBatching: 1
+  m_AlwaysUpdate: 1
+  m_AutoRebind: 0
 --- !u!1 &6984533856663488226
 GameObject:
   m_ObjectHideFlags: 0

@@ -95,6 +95,9 @@ public class Player_Attacks : MonoBehaviour
                 AttackStartTimer = 0;
                 AttackActiveTimer = 0;
                 AttackRecoveryTimer = 0;
+                var animator = gameObject.GetComponent<Animator>();
+                animator.SetBool("IsLightAttack", false);
+                animator.SetBool("IsHeavyAttack", false);
             }
         }
     }
@@ -111,7 +114,8 @@ public class Player_Attacks : MonoBehaviour
         {
             attacking = true;
             LightAttackTrue = true;
-
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsLightAttack", true);
             //PassedStartTimer = p1.lightAttackSUF;
             //PassedActiveTimer = p1.lightAttackACF;
             //PassedRecoveryTimer = p1.lightAttackREF;
@@ -128,6 +132,8 @@ public class Player_Attacks : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
         {
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsHeavyAttack", true);
             attacking = true;
             HeavyAttackTrue = true;
 
@@ -149,6 +155,8 @@ public class Player_Attacks : MonoBehaviour
         ///
         if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
         {
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsLightAttack", true);
             attacking = true;
             LightAttackTrue = true;
 
@@ -167,6 +175,8 @@ public class Player_Attacks : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !stun.BlockStun && !stun.HitStun && !stun.IsBlocking)
         {
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsHeavyAttack", true);
             attacking = true;
             HeavyAttackTrue = true;
 
