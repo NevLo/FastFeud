@@ -564,7 +564,7 @@ MonoBehaviour:
     m_Extent: {x: 0.7986737, y: 0.8810384, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
-  m_AutoRebind: 0
+  m_AutoRebind: 1
 --- !u!50 &1563766153964991943
 Rigidbody2D:
   serializedVersion: 4
