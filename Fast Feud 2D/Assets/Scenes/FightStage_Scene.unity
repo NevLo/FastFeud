@@ -2606,9 +2606,9 @@ RectTransform:
   - {fileID: 1025067437}
   - {fileID: 1241450545}
   - {fileID: 272677474}
+  - {fileID: 738722094}
   - {fileID: 592815432}
   - {fileID: 1727319891}
-  - {fileID: 738722094}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
