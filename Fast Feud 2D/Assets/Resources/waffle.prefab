@@ -103,6 +103,7 @@ MonoBehaviour:
   RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
+  isHeavyAttack: 0
 --- !u!61 &6343942481828595445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1034,8 +1035,7 @@ MonoBehaviour:
   BlockStun: 0
   HitStunTimer: 0
   BlockStunTimer: 0
-  WhoWon:
-  - {fileID: 0}
+  WhoWon: {fileID: 0}
   RoundTimer: {fileID: 0}
   doWinCheck: 1
   rb: {fileID: 6984533856626589260}
@@ -1053,7 +1053,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Grounded: 0
-  JumpSpeed: 50
+  JumpSpeed: 25
   BlockKeyLeft: 0
   BlockKeyRight: 0
   jumping: 0
@@ -1288,3 +1288,4 @@ MonoBehaviour:
   RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
+  isHeavyAttack: 0

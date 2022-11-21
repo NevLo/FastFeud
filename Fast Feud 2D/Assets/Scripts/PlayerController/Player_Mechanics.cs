@@ -43,7 +43,7 @@ public class Player_Mechanics : MonoBehaviour
     public LayerMask GroundLayer;
     public LayerMask PlayerLayer;
     public int Grounded;
-    public float JumpSpeed;
+    public float JumpSpeed = 25;
  
     public bool BlockKeyLeft;
     public bool BlockKeyRight;
@@ -364,14 +364,14 @@ public class Player_Mechanics : MonoBehaviour
             IsCrouching = false;
             if (isGroundedOnLayer(1.0f,GroundLayer))
             {
-                rb.velocity = new Vector2(-1 * speed, 0);
+                rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
                 var animator = gameObject.GetComponent<Animator>();
                 animator.SetBool("IsWalking", true);
             }
 
             else if(isGroundedOnLayer(1.5f,PlayerLayer))
             {
-                rb.velocity = new Vector2(-1 * speed, 0);
+                rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
             }
         }
 
@@ -380,14 +380,14 @@ public class Player_Mechanics : MonoBehaviour
             IsCrouching = false;
             if (isGroundedOnLayer(1.0f,GroundLayer))
             {
-                rb.velocity = new Vector2(1 * speed, 0);
+                rb.velocity = new Vector2(1 * speed, rb.velocity.y);
                 var animator = gameObject.GetComponent<Animator>();
                 animator.SetBool("IsWalking", true);
             }
 
             else if (isGroundedOnLayer(1.5f,PlayerLayer))
             {
-                rb.velocity = new Vector2(1 * speed, 0);
+                rb.velocity = new Vector2(1 * speed, rb.velocity.y);
             }
 
         }
