@@ -12,7 +12,7 @@ public class Data : ScriptableObject
     public bool HasFightStarted;
     public int Player1Wins;
     public int Player2Wins;
-
+    public int RoundCount = 1;
 
     // Could also implement some methods to set/read data,
     // do stuff with the data like parsing between types, fileIO etc

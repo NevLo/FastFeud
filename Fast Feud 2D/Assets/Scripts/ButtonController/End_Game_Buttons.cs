@@ -8,7 +8,7 @@ public class End_Game_Buttons : MonoBehaviour
     // Start is called before the first frame update
 
     public Data PlayerData;
-    
+    public TurnOnWins wins;
     
     void Start()
     {
@@ -28,6 +28,11 @@ public class End_Game_Buttons : MonoBehaviour
         PlayerData.HasFightStarted = false;
         PlayerData.HasSomeoneWon = false;
         PlayerData.HasSomeoneWonTwice = false;
+        PlayerData.RoundCount = 1;
+        wins.Win1.SetActive(false);
+        wins.Win2.SetActive(false);
+        wins.Win3.SetActive(false);
+        wins.Win4.SetActive(false);
     }
 
     public void GoToMainMenu()
