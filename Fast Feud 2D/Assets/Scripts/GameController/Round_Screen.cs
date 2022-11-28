@@ -79,13 +79,13 @@ public class Round_Screen : MonoBehaviour
 
         else if(WhoWon.Player1Wins == 1 && WhoWon.Player2Wins == 1 && !RoundStart && !RoundStart2)
         {
-            RoundScreen.text = "Round 3";
+            RoundScreen.text = "Round " + WhoWon.RoundCount;
             RoundStart = true;
         }
 
         else if (WhoWon.HasSomeoneWon == false && !RoundStart && !RoundStart2)
         {
-            RoundScreen.text = "Round 1";
+            RoundScreen.text = "Round " + WhoWon.RoundCount;
             WhoWon.Player1Wins = 0;
             WhoWon.Player2Wins = 0;
             RoundStart = true;
@@ -94,7 +94,7 @@ public class Round_Screen : MonoBehaviour
 
         else if(WhoWon.HasSomeoneWon == true && !RoundStart && !RoundStart2)
         {
-            RoundScreen.text = "Round 2";
+            RoundScreen.text = "Round " + WhoWon.RoundCount;
             RoundStart = true;
         }
 

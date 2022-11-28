@@ -40,9 +40,10 @@ public class Win_Screen : MonoBehaviour
             won = true;
         }
 
-        else
+        else if(WhoWon.PlayerWin == 3)
         {
-            win.text = "";
+            win.text = "TIE";
+            won = true;
         }
 
         if (won)
@@ -52,6 +53,7 @@ public class Win_Screen : MonoBehaviour
 
             if (WinTimer >= WinCooldown)
             {
+                WhoWon.RoundCount++;
                 background.SetActive(false);
                 WinTimer = 0;
                 WhoWon.PlayerWin = 0;
