@@ -5,7 +5,7 @@ public class Waffle : Character
 {
     public Waffle()
     {
-        maxHealth = 10;
+        maxHealth = 100;
         health = maxHealth;
         isAlive = (health > 0) ? true : false;
 
@@ -55,8 +55,8 @@ public class Waffle : Character
         crouchKickACF = 0;
         crouchKickREF = 0;
         //## ATTACK DAMAGE NUMBERS ##
-        lightAttackDamage = 5;
-        heavyAttackDamage = 10;
+        lightAttackDamage = 2;
+        heavyAttackDamage = 3;
         kickAttackDamage = 0;
         cLightAttackDamage = 0;
         cHeavyAttackDamage = 0;

@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856626589264, guid: 745fb7614130dc142a544cd9a31ca0d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856663488225, guid: 745fb7614130dc142a544cd9a31ca0d2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3183,7 +3183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856626589264, guid: fe7619c1d77e94046a50c4976bfaf15b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856663488225, guid: fe7619c1d77e94046a50c4976bfaf15b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7329,6 +7329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wendy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6589454792700333646, guid: a1ab98a97571d914ca89857c387d052d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6589454792700333648, guid: a1ab98a97571d914ca89857c387d052d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -7475,6 +7479,10 @@ PrefabInstance:
     - target: {fileID: 6984533856626589264, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
       propertyPath: m_Name
       value: jack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984533856626589264, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856663488225, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
       propertyPath: m_LocalRotation.z
