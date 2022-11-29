@@ -59,18 +59,22 @@ public class Apply_Player_Sprite : MonoBehaviour
         switch (p2.ToString()) { 
             case "Wendy":
                 Player2Prefab = Instantiate(wendy2, new Vector3(7, -2, -1), new Quaternion(0, 180, 0, 0));
+                Player2Prefab.tag = "Player 2";
                 //player2.tag = "Player 2";
                 break;
             case "Jack":
                 Player2Prefab = Instantiate(jack2, new Vector3(7, -2, -1), new Quaternion (0,180,0,0));
+                Player2Prefab.tag = "Player 2";
                 //player2.tag = "Player 2";
                 break;
             case "Waffle":
                 Player2Prefab = Instantiate(waffle2, new Vector3(7, -2, -1), new Quaternion(0, 180, 0, 0));
+                Player2Prefab.tag = "Player 2";
                 //player2.tag = "Player 2";
                 break;
             case "BurgerKing":
                 Player2Prefab = Instantiate(burger2, new Vector3(7, -2, -1), new Quaternion(0, 180, 0, 0));
+                Player2Prefab.tag = "Player 2";
                 //player2.tag = "Player 2";
                 break;
             default:

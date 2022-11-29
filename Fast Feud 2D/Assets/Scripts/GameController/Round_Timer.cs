@@ -10,6 +10,7 @@ public class Round_Timer : MonoBehaviour
     public Text TimerText;
     private bool RoundHasStarted = false;
     public int timer;
+    public Win_Screen winScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,10 @@ public class Round_Timer : MonoBehaviour
     void Update()
     {
         TimerText.text = timer.ToString();
-        if(RoundScreen.StartRoundTimer == true)
+        if(RoundScreen.StartRoundTimer)
         {
             
-            if(RoundHasStarted == true)
+            if(RoundHasStarted)
             {
                 StartCoroutine(RoundCountdown());
                 
@@ -33,8 +34,9 @@ public class Round_Timer : MonoBehaviour
             
         }
 
-        if (timer <= 0)
+        if (timer <= 0 || winScreen.won)
         {
+            //Debug.Log("BOOP BOOP");
             StopCoroutine(RoundCountdown());
         }
     }
@@ -44,6 +46,7 @@ public class Round_Timer : MonoBehaviour
         for(int i = 0; i < 99; i++)
         {
             RoundHasStarted = false;
+            if(!winScreen.won)
             timer--;
             if(timer <= 0)
             {

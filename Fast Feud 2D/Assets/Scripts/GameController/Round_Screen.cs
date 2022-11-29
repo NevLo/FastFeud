@@ -15,6 +15,7 @@ public class Round_Screen : MonoBehaviour
     public bool StartRoundTimer;
     public float RoundStartDelay;
     public float RoundStartTimer;
+    public Win_Screen ws;
     public GameObject Wall1;
     public GameObject Wall2;
 
@@ -58,20 +59,18 @@ public class Round_Screen : MonoBehaviour
         if(WhoWon.Player1Wins >= 2 || WhoWon.Player2Wins >= 2)
         {
             //int whomsteved = WhoWon.Player1Wins > WhoWon.Player2Wins ? 1 : 2;
-
+            ws.won = true;
+            RoundBackground.SetActive(true);
+            WhoWon.HasSomeoneWon = false;
             if (WhoWon.Player1Wins > WhoWon.Player2Wins) 
             {
                 RoundScreen.text = "Player 1 Wins";
-                RoundBackground.SetActive(true);
-                WhoWon.HasSomeoneWon = false;
                 //WhoWon.Player1Wins = 0;
                 //WhoWon.Player2Wins = 0;
             }
             else
             {
                 RoundScreen.text = "Player 2 Wins";
-                RoundBackground.SetActive(true);
-                WhoWon.HasSomeoneWon = false;
                 //WhoWon.Player1Wins = 0;
                 //WhoWon.Player2Wins = 0;
             }

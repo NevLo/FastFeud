@@ -103,6 +103,7 @@ MonoBehaviour:
   RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
+  isHeavyAttack: 0
 --- !u!61 &6343942481828595445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -336,7 +337,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6984533855216761074}
-  m_LocalRotation: {x: 0, y: 0, z: -0.24641404, w: 0.96916467}
+  m_LocalRotation: {x: 0, y: 0, z: -0.24641633, w: 0.9691641}
   m_LocalPosition: {x: 0.18560015, y: -0.0047750473, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -590,7 +591,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6984533855861076700}
-  m_LocalRotation: {x: 0, y: 0, z: 0.99999857, w: 0.0016920489}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99999857, w: 0.0016914707}
   m_LocalPosition: {x: 0.07556913, y: 0.36073932, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -622,7 +623,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6984533855994803756}
-  m_LocalRotation: {x: -0, y: -0, z: 0.70244735, w: 0.7117358}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70244825, w: 0.7117349}
   m_LocalPosition: {x: 0.18280022, y: -0.00000006481146, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -653,7 +654,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6984533856039554614}
-  m_LocalRotation: {x: -0, y: -0, z: -0.5790664, w: 0.8152803}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5790668, w: 0.81528}
   m_LocalPosition: {x: 0.1919027, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -804,7 +805,6 @@ GameObject:
   - component: {fileID: 6984533856626589257}
   - component: {fileID: 6984533856626589258}
   - component: {fileID: -4892664796013998026}
-  - component: {fileID: -2367733693841386929}
   - component: {fileID: 7742309629250200735}
   m_Layer: 0
   m_Name: burger
@@ -833,7 +833,7 @@ Transform:
   - {fileID: 9047687270263276920}
   - {fileID: 1129683810335995362}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6984533856626589263
 SpriteRenderer:
@@ -1001,8 +1001,7 @@ MonoBehaviour:
   BlockStun: 0
   HitStunTimer: 0
   BlockStunTimer: 0
-  WhoWon:
-  - {fileID: 0}
+  WhoWon: {fileID: 0}
   RoundTimer: {fileID: 0}
   doWinCheck: 1
   rb: {fileID: 6984533856626589260}
@@ -1020,25 +1019,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Grounded: 0
-  JumpSpeed: 50
+  JumpSpeed: 25
   BlockKeyLeft: 0
   BlockKeyRight: 0
   jumping: 0
   IsCrouching: 0
   JumpCooldown: 0
---- !u!114 &-2367733693841386929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6984533856626589264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebfd23dec2dbda49858778da0b08c90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stun: {fileID: -4892664796013998026}
   HeavyAttack: {fileID: 1924469780510724863}
   LightAttack: {fileID: 8310570372655590178}
   attacking: 0
@@ -1065,27 +1051,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 9078642508555112620, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  m_RootBone: {fileID: 0}
   m_BoneTransforms:
-  - {fileID: 9078642508555112620, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 1270480720213782739, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 1891392749784395155, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 819299912380125536, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 6525873755902517936, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 9162972261470523214, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 8674962741274695643, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 6142158498047001199, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 407928582470964290, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 536825235628580893, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 8816765255526127987, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 8873963754489534098, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 7863147669471618770, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 288888381719924055, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 511164793490750954, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
-  - {fileID: 3957832009699409124, guid: 9194a3329eb50b8bf88256bb694ac6c0, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_Bounds:
-    m_Center: {x: -0.21038246, y: -0.024335474, z: 0}
-    m_Extent: {x: 0.29954553, y: 0.39756286, z: 0}
+    m_Center: {x: 0.07294613, y: 0.38962322, z: 0}
+    m_Extent: {x: 0.57099926, y: 1.0100299, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1112,7 +1098,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6984533856663488226}
-  m_LocalRotation: {x: 0, y: 0, z: 0.00000001861954, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.000000055858617, w: 1}
   m_LocalPosition: {x: 0.1881339, y: -0.000000008060374, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1175,7 +1161,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6984533856776550116}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9821922, w: 0.18787904}
+  m_LocalRotation: {x: 0, y: 0, z: -0.982192, w: 0.18788017}
   m_LocalPosition: {x: 0.0342395, y: -0.37778327, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1304,3 +1290,4 @@ MonoBehaviour:
   RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
+  isHeavyAttack: 0

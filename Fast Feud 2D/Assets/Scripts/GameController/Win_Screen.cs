@@ -12,10 +12,11 @@ public class Win_Screen : MonoBehaviour
 
     public Text win;
     public GameObject background;
-    private bool won = false;
+    public bool won = false;
     private float WinTimer;
     public float WinCooldown;
     public Data WhoWon;
+    public End_Game_Buttons reseter;
 
     void Start()
     {
@@ -58,7 +59,17 @@ public class Win_Screen : MonoBehaviour
                 WinTimer = 0;
                 WhoWon.PlayerWin = 0;
                 won = false;
-                SceneManager.LoadScene("FightStage_Scene");
+                if(WhoWon.Player1Wins >= 2 || WhoWon.Player2Wins >= 2)
+                {
+                    //reseter.ResetData();
+                    Time.timeScale = 0;
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                    SceneManager.LoadScene("FightStage_Scene");
+                }
+
             }
         }
     }

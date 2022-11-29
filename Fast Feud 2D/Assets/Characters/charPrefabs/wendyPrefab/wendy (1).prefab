@@ -1054,7 +1054,7 @@ Transform:
   - {fileID: 7200777824859589988}
   - {fileID: 3492311077919458046}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6589454792700333649
 SpriteRenderer:
@@ -1203,7 +1203,7 @@ Animator:
   m_GameObject: {fileID: 6589454792700333646}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 858b17aee068c5105b5787cd9c5f06d7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 227b21e5d5f665eb8a67327e13538aa1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1257,14 +1257,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Grounded: 0
-  JumpSpeed: 50
+  JumpSpeed: 25
   BlockKeyLeft: 0
   BlockKeyRight: 0
   jumping: 0
   IsCrouching: 0
   JumpCooldown: 0
-  HeavyAttack: {fileID: 0}
-  LightAttack: {fileID: 0}
+  HeavyAttack: {fileID: 2389557215156265697}
+  LightAttack: {fileID: 5244843127487404860}
   attacking: 0
   cooldown: 0.25
   timer: 0

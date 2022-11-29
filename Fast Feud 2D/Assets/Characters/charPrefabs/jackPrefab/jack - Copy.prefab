@@ -1188,7 +1188,7 @@ GameObject:
   - component: {fileID: 6984533856626589258}
   - component: {fileID: -4892664796013998026}
   m_Layer: 0
-  m_Name: jack
+  m_Name: jack - Copy
   m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1215,7 +1215,7 @@ Transform:
   - {fileID: 1129683810335995362}
   - {fileID: 7238396577798353293}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6984533856626589263
 SpriteRenderer:
@@ -1436,14 +1436,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   Grounded: 0
-  JumpSpeed: 50
+  JumpSpeed: 25
   BlockKeyLeft: 0
   BlockKeyRight: 0
   jumping: 0
   IsCrouching: 0
   JumpCooldown: 0
-  HeavyAttack: {fileID: 0}
-  LightAttack: {fileID: 0}
+  HeavyAttack: {fileID: 1924469780510724863}
+  LightAttack: {fileID: 8310570372655590178}
   attacking: 0
   cooldown: 0.25
   timer: 0

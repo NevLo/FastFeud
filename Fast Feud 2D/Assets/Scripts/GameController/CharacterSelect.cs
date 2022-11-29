@@ -26,6 +26,11 @@ public class CharacterSelect : MonoBehaviour
         new Colonel(),
         new Waffle()
     };
+    public int[] implementedIndex =
+    {
+        0,1,5,8
+    };
+
     string[] stageList =
     {
         "Wendys Parking Lot",
@@ -58,9 +63,12 @@ public class CharacterSelect : MonoBehaviour
 
     }
     public void rand (){
-        int setRand = Random.Range(0,9);
-        BindCharacterToPlayer(setRand);
-        BindCharacterToPlayer(Random.Range(0, 9));
+        int setRand = (int)Random.Range(0,implementedIndex.Length);
+        resetPlayer1();
+        resetPlayer2();
+
+        BindCharacterToPlayer(implementedIndex[setRand]);
+        BindCharacterToPlayer(implementedIndex[Random.Range(0, implementedIndex.Length)]);
 
     }
     //implemented
