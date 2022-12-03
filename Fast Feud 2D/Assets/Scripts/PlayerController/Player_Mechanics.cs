@@ -434,7 +434,7 @@ public class Player_Mechanics : MonoBehaviour
 
     bool isGroundedOnLayer(float offset, LayerMask layer)
     {
-        return Physics2D.OverlapCircle(GroundCheck.position, offset, layer);
+        return Physics2D.OverlapCircle(GroundCheck.position, GroundCheck.localScale.x + .3f, layer);
     }
 
     void Flip()

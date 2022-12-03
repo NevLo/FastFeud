@@ -501,7 +501,7 @@ Transform:
   - {fileID: 855775508}
   - {fileID: 1034618428}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &121511885
 MonoBehaviour:
@@ -524,8 +524,8 @@ MonoBehaviour:
   wendy2: {fileID: 6589454792700333646, guid: a1ab98a97571d914ca89857c387d052d, type: 3}
   jack: {fileID: 6984533856626589264, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
   jack2: {fileID: 6984533856626589264, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
-  burger: {fileID: 6984533856626589264, guid: dc26b06026e2be24aac627905fa233ab, type: 3}
-  burger2: {fileID: 6984533856626589264, guid: dc26b06026e2be24aac627905fa233ab, type: 3}
+  burger: {fileID: 8408835623727982506, guid: 6a48ae5a9d6e06a44be2ab98a334ce9f, type: 3}
+  burger2: {fileID: 8408835623727982506, guid: 6a48ae5a9d6e06a44be2ab98a334ce9f, type: 3}
   WendySprite: {fileID: 21300000, guid: bb29e63db6b49a445862948862fbc064, type: 3}
   JackSprite: {fileID: 21300000, guid: 02f7f57221ef88a4988aefe633fb4ac0, type: 3}
   WaffleSprite: {fileID: 21300000, guid: 69edecc8d6a008645bb61bd068ae7fb6, type: 3}
@@ -1747,7 +1747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856626589262, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856626589262, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1847,7 +1847,7 @@ Transform:
   - {fileID: 910682199}
   - {fileID: 1636438782}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327105583
 GameObject:
@@ -8967,7 +8967,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 78eb84b015ea162c0b40d9e64e25fe9f, type: 2}
     - target: {fileID: 6984533856626589262, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6984533856626589262, guid: e64c2a3874e86244e8e7c774b8b0613e, type: 3}
       propertyPath: m_LocalPosition.x
