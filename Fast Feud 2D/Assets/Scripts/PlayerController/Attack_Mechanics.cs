@@ -46,15 +46,18 @@ public class Attack_Mechanics : MonoBehaviour
             damage = p2.lightAttackDamage;
             isHeavyAttack = false;
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(blocking.HitStun || blocking.BlockStun)
+        if(blocking != null)
         {
-            gameObject.SetActive(false);
+            if (blocking.HitStun || blocking.BlockStun)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
