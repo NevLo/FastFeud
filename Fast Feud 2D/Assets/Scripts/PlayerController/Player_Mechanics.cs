@@ -14,6 +14,7 @@ public class Player_Mechanics : MonoBehaviour
     public Player_Mechanics BlockKey;
     public float PlayerMaxHealth;
     public float PlayerHealth;
+    public float Meter;
     public PlayerBar p1Bar;
     public PlayerBar p2Bar;
     public string PlayerName;
@@ -102,6 +103,9 @@ public class Player_Mechanics : MonoBehaviour
             RoundTimer = GameObject.Find("Health UI/Timer").GetComponent<Round_Timer>();
             p1Bar = GameObject.Find("Health UI/Player 1 HP").GetComponent<PlayerBar>();
             p1Bar.PlayerHealth = this.gameObject.GetComponent<Player_Mechanics>();
+            var p1super = GameObject.Find("Health UI/Player1Meter").GetComponent<SuperBar>();
+            p1super.Player = this.gameObject.GetComponent<Player_Mechanics>();
+
         }
         if (gameObject.tag == "Player 2")
         {
@@ -109,6 +113,8 @@ public class Player_Mechanics : MonoBehaviour
             RoundTimer = GameObject.Find("Health UI/Timer").GetComponent<Round_Timer>();
             p2Bar = GameObject.Find("Health UI/Player 2 HP").GetComponent<PlayerBar>();
             p2Bar.PlayerHealth = this.gameObject.GetComponent<Player_Mechanics>();
+            var p1super = GameObject.Find("Health UI/Player2Meter").GetComponent<SuperBar>();
+            p1super.Player = this.gameObject.GetComponent<Player_Mechanics>();
         }
         ///////////////////////////////////////////////////////////
         ///
@@ -123,6 +129,7 @@ public class Player_Mechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Attack();
         if (BlockStun == true)
         {
@@ -286,8 +293,8 @@ public class Player_Mechanics : MonoBehaviour
     }
 
     private void FixedUpdate()
-
     {
+        Meter += .01f;
         if (!IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
