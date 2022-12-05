@@ -71,7 +71,7 @@ public class Attack_Mechanics : MonoBehaviour
             {
                 otherPlayer.PlayerHealth -= damage;
                 otherPlayer.HitStun = true;
-                blocking.Meter = Mathf.Min(blocking.Meter + damage * 5, 100);
+                blocking.Meter = Mathf.Min(blocking.Meter + damage * 3, 100);
 
             }
             else

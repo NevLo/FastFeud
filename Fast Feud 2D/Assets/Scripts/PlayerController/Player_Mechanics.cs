@@ -294,7 +294,7 @@ public class Player_Mechanics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Meter += .01f;
+        Meter = Mathf.Min(Meter + .05f, 100);
         if (!IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
