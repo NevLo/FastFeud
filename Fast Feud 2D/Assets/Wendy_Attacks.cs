@@ -19,10 +19,12 @@ public class Wendy_Attacks : MonoBehaviour
         Wendy = gameObject.transform.parent.gameObject;
         WendyPosition = gameObject.transform.parent.transform;
 
-        if (gameObject.tag == "HAP1" && Wendy.tag == "Player 1"|| gameObject.tag == "HAP2" && Wendy.tag == "Player 2")
+        if (gameObject.tag == "SAP1" && Wendy.tag == "Player 1" && Wendy.GetComponent<Player_Mechanics>().Meter >= 100 
+            || gameObject.tag == "SAP2" && Wendy.tag == "Player 2" && Wendy.GetComponent<Player_Mechanics>().Meter >= 100)
+
         {
             GameObject heavyBullet = Instantiate(HeavyBullet, transform.position, Quaternion.identity);
-            if(gameObject.tag == "HAP2")
+            if(gameObject.tag == "SAP2")
             {
                 heavyBullet.GetComponent<SpriteRenderer>().flipX = !heavyBullet.GetComponent<SpriteRenderer>().flipX;
             }

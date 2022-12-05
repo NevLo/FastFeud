@@ -1303,6 +1303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388777188}
   - component: {fileID: 388777189}
+  - component: {fileID: 388777190}
   m_Layer: 5
   m_Name: Player2Meter
   m_TagString: Untagged
@@ -1383,6 +1384,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &388777190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388777187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc11bb90724199c408633d9b1adf24da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  slider: {fileID: 388777189}
 --- !u!1 &405785501
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,8 +4618,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1382122637}
   - component: {fileID: 1382122640}
-  - component: {fileID: 1382122639}
   - component: {fileID: 1382122638}
+  - component: {fileID: 1382122641}
   m_Layer: 5
   m_Name: Player1Meter
   m_TagString: Untagged
@@ -4642,20 +4657,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382122636}
   m_CullTransparentMesh: 1
---- !u!114 &1382122639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382122636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41cfaa0713a86c4baa3933ab73346d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHealth: {fileID: 0}
-  slider: {fileID: 1382122640}
 --- !u!114 &1382122640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4707,6 +4708,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1382122641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382122636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc11bb90724199c408633d9b1adf24da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  slider: {fileID: 1382122640}
 --- !u!1 &1389528085
 GameObject:
   m_ObjectHideFlags: 0

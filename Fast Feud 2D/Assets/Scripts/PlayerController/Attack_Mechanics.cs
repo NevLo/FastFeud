@@ -46,6 +46,16 @@ public class Attack_Mechanics : MonoBehaviour
             damage = p2.lightAttackDamage;
             isHeavyAttack = false;
         }
+        else if (gameObject.tag == "SAP1")
+        {
+            damage = p1.superAttackDamage = 0;
+            isHeavyAttack = false;
+        }
+        else if (gameObject.tag == "SAP2")
+        {
+            damage = p2.superAttackDamage = 0;
+            isHeavyAttack = false;
+        }
 
     }
 
