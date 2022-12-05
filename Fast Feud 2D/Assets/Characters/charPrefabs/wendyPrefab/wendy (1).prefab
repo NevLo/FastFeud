@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 1447551179036232604}
   m_Layer: 0
   m_Name: Special
-  m_TagString: Untagged
+  m_TagString: SAP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,7 +523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4951848271191293074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1122,7 +1122,7 @@ Transform:
   - {fileID: 7200777824859589988}
   - {fileID: 3492311077919458046}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6589454792700333649
 SpriteRenderer:
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   - {fileID: 7653792327684084586}
   - {fileID: 5868398470575752982}
   m_Bounds:
-    m_Center: {x: -0.38862622, y: -0.01846981, z: 0}
+    m_Center: {x: -0.38862622, y: -0.01846993, z: 0}
     m_Extent: {x: 0.5099999, y: 1.3989279, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1334,6 +1334,7 @@ MonoBehaviour:
   JumpCooldown: 0
   HeavyAttack: {fileID: 2389557215156265697}
   LightAttack: {fileID: 5244843127487404860}
+  SpecialAttack: {fileID: 4951848271191293074}
   attacking: 0
   cooldown: 0.25
   timer: 0
@@ -1343,6 +1344,9 @@ MonoBehaviour:
   HeavyStartDelay: 0
   HeavyActiveDelay: 0
   HeavyRecoveryDelay: 0
+  SuperStartDelay: 0
+  SuperActiveDelay: 0
+  SuperRecoveryDelay: 0
   PassedStartDelay: 0
   PassedActiveDelay: 0
   PassedRecoveryDelay: 0

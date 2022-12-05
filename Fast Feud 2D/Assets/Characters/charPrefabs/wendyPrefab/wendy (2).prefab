@@ -655,7 +655,7 @@ Transform:
   - {fileID: 235520704305706857}
   - {fileID: 7022938094864131199}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7512532500360412102
 SpriteRenderer:
@@ -742,8 +742,8 @@ MonoBehaviour:
   - {fileID: 6414297034979895037}
   - {fileID: 7080555713423225473}
   m_Bounds:
-    m_Center: {x: -0.38862705, y: -0.01846981, z: 0}
-    m_Extent: {x: 0.50999975, y: 1.3989279, z: 0}
+    m_Center: {x: -0.38862592, y: -0.01846993, z: 0}
+    m_Extent: {x: 0.51000005, y: 1.3989279, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -867,6 +867,7 @@ MonoBehaviour:
   JumpCooldown: 0
   HeavyAttack: {fileID: 1304631127980726134}
   LightAttack: {fileID: 8933733942446534315}
+  SpecialAttack: {fileID: 8842060876333854705}
   attacking: 0
   cooldown: 0.25
   timer: 0
@@ -876,6 +877,9 @@ MonoBehaviour:
   HeavyStartDelay: 0
   HeavyActiveDelay: 0
   HeavyRecoveryDelay: 0
+  SuperStartDelay: 0
+  SuperActiveDelay: 0
+  SuperRecoveryDelay: 0
   PassedStartDelay: 0
   PassedActiveDelay: 0
   PassedRecoveryDelay: 0
@@ -1772,7 +1776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7022938094864131199
 Transform:
   m_ObjectHideFlags: 0
@@ -1781,7 +1785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8842060876333854705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

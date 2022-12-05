@@ -40,9 +40,9 @@ public class Wendy : Character
         jumpACF = 0;
         jumpREF = 0;
         //## SUPER ATTACK FRAME DATA ##
-        superAttackSUF = 0;
-        superAttackACF = 0;
-        superAttackREF = 0;
+        superAttackSUF = 1;
+        superAttackACF = 10;
+        superAttackREF = 10;
         //## CROUCHING LIGHT ATTACK FRAME DATA ##
         crouchLightAttackSUF = 0;
         crouchLightAttackACF = 0;
