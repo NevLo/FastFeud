@@ -25,6 +25,7 @@ public class Wendy_Attacks : MonoBehaviour
 
         {
             GameObject heavyBullet = Instantiate(HeavyBullet, transform.position, Quaternion.identity);
+            Wendy.GetComponent<Player_Mechanics>().Meter = 0;
             if(gameObject.tag == "SAP2")
             {
                 heavyBullet.GetComponent<SpriteRenderer>().flipX = !heavyBullet.GetComponent<SpriteRenderer>().flipX;

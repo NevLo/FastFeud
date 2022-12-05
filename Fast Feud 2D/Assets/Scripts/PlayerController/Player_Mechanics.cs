@@ -571,8 +571,6 @@ public class Player_Mechanics : MonoBehaviour
             PassedStartDelay = p1.superAttackSUF;
             PassedActiveDelay = p1.superAttackACF;
             PassedRecoveryDelay = p1.superAttackREF;
-
-            Meter = 0;
         }
 
 
@@ -621,8 +619,6 @@ public class Player_Mechanics : MonoBehaviour
             PassedStartDelay = p2.superAttackSUF;
             PassedActiveDelay = p2.superAttackACF;
             PassedRecoveryDelay = p2.superAttackREF;
-
-            Meter = 0;
         }
     }
 }
