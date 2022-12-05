@@ -1396,11 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11bb90724199c408633d9b1adf24da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  Player: {fileID: 0}
-=======
   Player: {fileID: 636064100}
->>>>>>> Stashed changes
   slider: {fileID: 388777189}
 --- !u!1 &405785501
 GameObject:
@@ -4735,11 +4731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11bb90724199c408633d9b1adf24da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  Player: {fileID: 0}
-=======
   Player: {fileID: 1426071623}
->>>>>>> Stashed changes
   slider: {fileID: 1382122640}
 --- !u!1 &1389528085
 GameObject:
