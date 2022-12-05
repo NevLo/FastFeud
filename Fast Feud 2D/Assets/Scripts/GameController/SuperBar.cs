@@ -17,10 +17,10 @@ public class SuperBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log(Player.Meter);
+        //smitna]sfgn
+        /// Debug.Log(Player.Meter);
         percentage = (Player.Meter / 100);
-        Debug.Log(percentage);
+        /// Debug.Log(percentage);
         slider.value = percentage;
     }
 }

@@ -1396,7 +1396,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11bb90724199c408633d9b1adf24da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   Player: {fileID: 0}
+=======
+  Player: {fileID: 636064100}
+>>>>>>> Stashed changes
   slider: {fileID: 388777189}
 --- !u!1 &405785501
 GameObject:
@@ -2272,6 +2276,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5175226443877518464, guid: 39839e2a62e52d541b5f3043e0f4c579, type: 3}
   m_PrefabInstance: {fileID: 1133956533185448552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &636064100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1133956532571544332, guid: 39839e2a62e52d541b5f3043e0f4c579, type: 3}
+  m_PrefabInstance: {fileID: 1133956533185448552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636064099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cffdc09939eb4780c94b1ee9eb5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &636064107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4027355617680694408, guid: 39839e2a62e52d541b5f3043e0f4c579, type: 3}
@@ -3386,8 +3401,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1123298713}
-  - component: {fileID: 1123298715}
   - component: {fileID: 1123298714}
+  - component: {fileID: 1123298715}
   m_Layer: 5
   m_Name: Player 2 HP
   m_TagString: Untagged
@@ -3480,7 +3495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41cfaa0713a86c4baa3933ab73346d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealth: {fileID: 0}
+  PlayerHealth: {fileID: 636064100}
   slider: {fileID: 1123298714}
 --- !u!1 &1168398963
 GameObject:
@@ -4720,7 +4735,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11bb90724199c408633d9b1adf24da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   Player: {fileID: 0}
+=======
+  Player: {fileID: 1426071623}
+>>>>>>> Stashed changes
   slider: {fileID: 1382122640}
 --- !u!1 &1389528085
 GameObject:
@@ -5018,6 +5037,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3655994145718094184, guid: 2120e0743ecc1a446be2abba8c96d3d1, type: 3}
   m_PrefabInstance: {fileID: 3655994147009947989}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1426071623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3655994145718094098, guid: 2120e0743ecc1a446be2abba8c96d3d1, type: 3}
+  m_PrefabInstance: {fileID: 3655994147009947989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426071608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cffdc09939eb4780c94b1ee9eb5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1455324011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6009,7 +6039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41cfaa0713a86c4baa3933ab73346d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealth: {fileID: 0}
+  PlayerHealth: {fileID: 1426071623}
   slider: {fileID: 1736522792}
 --- !u!114 &1736522792
 MonoBehaviour:
@@ -6883,12 +6913,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5175226443877518464, guid: 39839e2a62e52d541b5f3043e0f4c579, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1133956532571544332, guid: 39839e2a62e52d541b5f3043e0f4c579, type: 3}
+    m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 39839e2a62e52d541b5f3043e0f4c579, type: 3}
 --- !u!1001 &3655994147009947989
@@ -6906,10 +6931,6 @@ PrefabInstance:
     - target: {fileID: 1612145622337897530, guid: 2120e0743ecc1a446be2abba8c96d3d1, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612145622337897530, guid: 2120e0743ecc1a446be2abba8c96d3d1, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3655994145718094100, guid: 2120e0743ecc1a446be2abba8c96d3d1, type: 3}
       propertyPath: OtherPlayer
@@ -6999,7 +7020,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3655994145718094098, guid: 2120e0743ecc1a446be2abba8c96d3d1, type: 3}
+    m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2120e0743ecc1a446be2abba8c96d3d1, type: 3}
