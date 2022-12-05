@@ -23,12 +23,12 @@ public class Waffle : Character
         isSuperInvicibleSU = true;
         isAnimatable = true;
         //## LIGHT ATTACK FRAME DATA ##
-        lightAttackSUF = 10;
-        lightAttackACF = 10;
+        lightAttackSUF = 12;
+        lightAttackACF = 3;
         lightAttackREF = 10;
         //## HEAVY ATTACK FRAME DATA ##
-        heavyAttackSUF = 20;
-        heavyAttackACF = 20;
+        heavyAttackSUF = 26;
+        heavyAttackACF = 5;
         heavyAttackREF = 20;
         //## KICK FRAME DATA ##
         kickSUF = 0;
@@ -55,8 +55,8 @@ public class Waffle : Character
         crouchKickACF = 0;
         crouchKickREF = 0;
         //## ATTACK DAMAGE NUMBERS ##
-        lightAttackDamage = 2;
-        heavyAttackDamage = 3;
+        lightAttackDamage = 10;
+        heavyAttackDamage = 16;
         kickAttackDamage = 0;
         cLightAttackDamage = 0;
         cHeavyAttackDamage = 0;

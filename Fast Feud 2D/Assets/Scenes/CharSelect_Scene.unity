@@ -266,6 +266,7 @@ MonoBehaviour:
   p1: {fileID: 97693952}
   p2: {fileID: 983046761}
   FightBtn: {fileID: 1986490674}
+  implementedIndex: 00000000010000000500000008000000
   stageText: {fileID: 1450989932}
 --- !u!1 &29925555
 GameObject:
@@ -2157,6 +2158,7 @@ MonoBehaviour:
   p1: {fileID: 97693952}
   p2: {fileID: 983046761}
   FightBtn: {fileID: 1986490674}
+  implementedIndex: 00000000010000000500000008000000
   stageText: {fileID: 1450989932}
 --- !u!114 &1450989932
 MonoBehaviour:
