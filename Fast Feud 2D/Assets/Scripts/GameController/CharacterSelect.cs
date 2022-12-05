@@ -8,6 +8,7 @@ public class CharacterSelect : MonoBehaviour
 {
     public bool p1Selected = false;
     public bool p2Selected = false;
+    public bool randTrack = false;
     public Text p1;
     public Text p2;
     public static Character player1 = null;
@@ -66,7 +67,7 @@ public class CharacterSelect : MonoBehaviour
         int setRand = (int)Random.Range(0,implementedIndex.Length);
         resetPlayer1();
         resetPlayer2();
-
+        randTrack = true;
         BindCharacterToPlayer(implementedIndex[setRand]);
         BindCharacterToPlayer(implementedIndex[Random.Range(0, implementedIndex.Length)]);
 
@@ -141,6 +142,7 @@ public class CharacterSelect : MonoBehaviour
         p1Selected = false;
         p1.text = "PLAYER 1 UNSELECTED";
         FightBtn.SetActive(false);
+        randTrack = false;
     }
     public void resetPlayer2()
     {
@@ -148,19 +150,28 @@ public class CharacterSelect : MonoBehaviour
         p2Selected = false;
         p2.text = "PLAYER 2 UNSELECTED";
         FightBtn.SetActive(false);
+        randTrack = false;
     }
 
 
     public void BindCharacterToPlayer(int ind)
     {
+        var char1_audio = GameObject.Find("CharSelect").GetComponent<AudioSource>();
+        var char2_audio = GameObject.Find("Fries?").GetComponent<AudioSource>();
         if (player1 == null)
         {
+            if(!randTrack){
+            char1_audio.Play();
+            }
             player1 = charList[ind];
             Debug.Log("Player 1 has selected " + player1.ToString());
             p1.text = "Player 1: " + player1.ToString();
         }
         else
         {
+            if(!randTrack){
+            char2_audio.Play();
+            }
             player2 = charList[ind];
             Debug.Log("Player 2 has selcted " + player2.ToString());
             p2.text = "Player 2: " + player2.ToString();

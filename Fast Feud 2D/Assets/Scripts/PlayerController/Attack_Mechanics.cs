@@ -79,6 +79,15 @@ public class Attack_Mechanics : MonoBehaviour
         {
             if ((!otherPlayer.IsBlocking) || (otherPlayer.IsBlockingLow && isHeavyAttack) || (!otherPlayer.IsBlockingLow && !isHeavyAttack))
             {
+                var LPunchHit = GameObject.Find("Light_punch").GetComponent<AudioSource>();
+                var HPunchHit = GameObject.Find("Heavy_punch").GetComponent<AudioSource>();
+                
+                if(isHeavyAttack){
+                    HPunchHit.Play();
+                }
+                else{
+                    LPunchHit.Play();
+                }
                 otherPlayer.PlayerHealth -= damage;
                 otherPlayer.HitStun = true;
                 blocking.Meter = Mathf.Min(blocking.Meter + damage * 3, 100);

@@ -31,19 +31,23 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame (){
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(wait(3f));
         SceneManager.LoadScene("CharSelect_Scene");
     }
     public void Fight (){
+        StartCoroutine(wait(1f));
         SceneManager.LoadScene("FightStage_Scene");
     }
     public void SelectCharacter(){
         
     }
     public void Options (){
+        StartCoroutine(wait(1f));
         SceneManager.LoadScene("OptionsMenu_Scene");
     }
 
     public void QuitGame (){
+        StartCoroutine(wait(1f));
         Debug.Log("Quit!");
         Application.Quit();
         //System.Environment.Exit(0);
@@ -52,4 +56,8 @@ public class MainMenu : MonoBehaviour
     public void ToTheMenu(){
         SceneManager.LoadScene("MainMenu_Scene");
     }
+    public IEnumerator wait(float i){
+    yield return new WaitForSeconds(i);
 }
+}
+
