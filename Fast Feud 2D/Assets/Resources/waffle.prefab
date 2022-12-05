@@ -1026,6 +1026,7 @@ MonoBehaviour:
   BlockKey: {fileID: 0}
   PlayerMaxHealth: 100
   PlayerHealth: 100
+  Meter: 0
   p1Bar: {fileID: 0}
   p2Bar: {fileID: 0}
   PlayerName: 
