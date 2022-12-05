@@ -59,6 +59,7 @@ public class Player_Mechanics : MonoBehaviour
     /// </summary>
     public GameObject HeavyAttack;
     public GameObject LightAttack;
+    public GameObject SpecialAttack;
 
     public bool attacking;
     public float cooldown = 0.25f;
@@ -80,6 +81,14 @@ public class Player_Mechanics : MonoBehaviour
     private float HeavyActiveTimer = 0;
     private float HeavyRecoveryTimer = 0;
 
+    public float SuperStartDelay;
+    public float SuperActiveDelay;
+    public float SuperRecoveryDelay;
+
+    private float SpecialStartTimer = 0;
+    private float SpecialActiveTimer = 0;
+    private float SpecialRecoveryTimer = 0;
+
     private float PassedStartTimer = 0;
     private float PassedActiveTimer = 0;
     private float PassedRecoveryTimer = 0;
@@ -90,10 +99,12 @@ public class Player_Mechanics : MonoBehaviour
 
     private bool LightAttackTrue;
     private bool HeavyAttackTrue;
+    private bool SpecialAttackTrue;
     void Start()
     {
         HeavyAttackTrue = false;
         LightAttackTrue = false;
+        SpecialAttackTrue = false;
         Application.targetFrameRate = 60;
         BlockKey = this.gameObject.GetComponent<Player_Mechanics>();
 
@@ -480,18 +491,24 @@ public class Player_Mechanics : MonoBehaviour
             {
                 HeavyAttack.SetActive(true);
             }
+            else if (SpecialAttackTrue && (!BlockStun && !HitStun))
+            {
+                SpecialAttack.SetActive(true);
+            }
         }
         else if (AttackActiveTimer >= AttackActiveDelay && AttackRecoveryTimer <= AttackRecoveryDelay)
         {
             AttackRecoveryTimer++;
             HeavyAttack.SetActive(false);
             LightAttack.SetActive(false);
+            SpecialAttack.SetActive(false);
         }
         else if (AttackRecoveryTimer >= AttackRecoveryDelay)
         {
             attacking = false;
             LightAttackTrue = false;
             HeavyAttackTrue = false;
+            SpecialAttackTrue = false;
             AttackStartTimer = 0;
             AttackActiveTimer = 0;
             AttackRecoveryTimer = 0;
@@ -509,7 +526,7 @@ public class Player_Mechanics : MonoBehaviour
                 PassedStartDelay, PassedActiveDelay, PassedRecoveryDelay);
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        if (Input.GetKeyDown(KeyCode.F) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             attacking = true;
             LightAttackTrue = true;
@@ -525,7 +542,7 @@ public class Player_Mechanics : MonoBehaviour
             PassedRecoveryDelay = p1.lightAttackREF;
 
         }
-        if (Input.GetKeyDown(KeyCode.R) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        if (Input.GetKeyDown(KeyCode.R) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsHeavyAttack", true);
@@ -540,9 +557,26 @@ public class Player_Mechanics : MonoBehaviour
             PassedActiveDelay = p1.heavyAttackACF;
             PassedRecoveryDelay = p1.heavyAttackREF;
 
-
         }
-        if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+
+        if (Input.GetKeyDown(KeyCode.G) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        {
+            attacking = true;
+            SpecialAttackTrue = true;
+
+            PassedStartTimer = SpecialStartTimer;
+            PassedActiveTimer = SpecialActiveTimer;
+            PassedRecoveryTimer = SpecialRecoveryTimer;
+
+            PassedStartDelay = p1.superAttackSUF;
+            PassedActiveDelay = p1.superAttackACF;
+            PassedRecoveryDelay = p1.superAttackREF;
+        }
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsLightAttack", true);
@@ -558,7 +592,7 @@ public class Player_Mechanics : MonoBehaviour
             PassedRecoveryDelay = p2.lightAttackREF;
 
         }
-        if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsHeavyAttack", true);
@@ -571,6 +605,20 @@ public class Player_Mechanics : MonoBehaviour
             PassedStartDelay = p2.heavyAttackSUF;
             PassedActiveDelay = p2.heavyAttackACF;
             PassedRecoveryDelay = p2.heavyAttackREF;
+        }
+
+        if (Input.GetKeyDown(KeyCode.G) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        {
+            attacking = true;
+            SpecialAttackTrue = true;
+
+            PassedStartTimer = SpecialStartTimer;
+            PassedActiveTimer = SpecialActiveTimer;
+            PassedRecoveryTimer = SpecialRecoveryTimer;
+
+            PassedStartDelay = p2.superAttackSUF;
+            PassedActiveDelay = p2.superAttackACF;
+            PassedRecoveryDelay = p2.superAttackREF;
         }
     }
 }
