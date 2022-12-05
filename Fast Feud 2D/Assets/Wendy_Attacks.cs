@@ -16,6 +16,7 @@ public class Wendy_Attacks : MonoBehaviour
 
     private void OnEnable()
     {
+        //GameObject heavyBullet = Instantiate(HeavyBullet, transform.position, Quaternion.identity);
         Wendy = gameObject.transform.parent.gameObject;
         WendyPosition = gameObject.transform.parent.transform;
 

@@ -18,7 +18,7 @@ public class SuperBar : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(Player.Meter);
+        Debug.Log(Player.Meter + "  :  " + Player.tag);
         percentage = (Player.Meter / 100);
         Debug.Log(percentage);
         slider.value = percentage;
