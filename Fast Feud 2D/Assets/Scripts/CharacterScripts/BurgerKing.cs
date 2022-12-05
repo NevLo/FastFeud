@@ -55,8 +55,8 @@ public class BurgerKing : Character
         crouchKickACF = 0;
         crouchKickREF = 0;
         //## ATTACK DAMAGE NUMBERS ##
-        lightAttackDamage = 3;
-        heavyAttackDamage = 7;
+        lightAttackDamage = 30;
+        heavyAttackDamage = 70;
         kickAttackDamage = 0;
         cLightAttackDamage = 0;
         cHeavyAttackDamage = 0;
