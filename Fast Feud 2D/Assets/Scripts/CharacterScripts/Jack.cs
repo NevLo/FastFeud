@@ -55,8 +55,8 @@ public class Jack : Character
         crouchKickACF = 0;
         crouchKickREF = 0;
         //## ATTACK DAMAGE NUMBERS ##
-        lightAttackDamage = 3;
-        heavyAttackDamage = 6;
+        lightAttackDamage = 30;
+        heavyAttackDamage = 60;
         kickAttackDamage = 0;
         cLightAttackDamage = 0;
         cHeavyAttackDamage = 0;

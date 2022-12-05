@@ -56,8 +56,8 @@ public class Wendy : Character
         crouchKickACF = 0;
         crouchKickREF = 0;
         //## ATTACK DAMAGE NUMBERS ##
-        lightAttackDamage = 2;
-        heavyAttackDamage = 3;
+        lightAttackDamage = 20;
+        heavyAttackDamage = 30;
         kickAttackDamage = 0;
         cLightAttackDamage = 0;
         cHeavyAttackDamage = 0;
