@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Cunscene : MonoBehaviour
+public class Cutscene_funny: MonoBehaviour
 {
-    void OnEnable(){
-        SceneManager.LoadScene("MainMenu_Scene");
-    }
 
     public void PlayGame()
     {

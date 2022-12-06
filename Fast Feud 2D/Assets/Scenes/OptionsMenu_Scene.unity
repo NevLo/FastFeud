@@ -428,21 +428,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 1 controls
-
-
-    A to move left
-
-    D to move right
-
-    W to
-    jump
-
-    S to crouch
-
-    F for a light attack
-
-    R for heavy attack '
+  m_Text: "Player 1 controls\n\nA to move left\nD to move right\nW to jump\nS to
+    crouch\nF for a light attack\nR for heavy attack \nG for super attack"
 --- !u!1 &973480826
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,22 +501,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 2 controls
-
-
-    Left arrow to move left
-
-    Rght arrow to move
-    right
-
-    Up arrow to jump
-
-    Down arrow to crouch
-
-    O for a light attack
-
-    P
-    for heavy attack '
+  m_Text: "Player 2 controls\n\nLeft arrow to move left\nRght arrow to move right\nUp
+    arrow to jump\nDown arrow to crouch\nO for a light attack\nP for heavy attack
+    \nL for super attack"
 --- !u!222 &973480829
 CanvasRenderer:
   m_ObjectHideFlags: 0
