@@ -531,8 +531,9 @@ public class Player_Mechanics : MonoBehaviour
             attacking = true;
             LightAttackTrue = true;
             var animator = gameObject.GetComponent<Animator>();
+            animator.enabled = false;
             animator.SetBool("IsLightAttack", true);
-
+            animator.enabled = true;
             PassedStartTimer = LightStartTimer;
             PassedActiveTimer = LightActiveTimer;
             PassedRecoveryTimer = LightRecoveryTimer;
@@ -545,7 +546,9 @@ public class Player_Mechanics : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
+            animator.enabled = false;
             animator.SetBool("IsHeavyAttack", true);
+            animator.enabled = true;
             attacking = true;
             HeavyAttackTrue = true;
 
@@ -563,6 +566,7 @@ public class Player_Mechanics : MonoBehaviour
         {
             attacking = true;
             SpecialAttackTrue = true;
+            p1.doSuperAttack();
 
             PassedStartTimer = SpecialStartTimer;
             PassedActiveTimer = SpecialActiveTimer;
@@ -579,7 +583,9 @@ public class Player_Mechanics : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
+            animator.enabled = false;
             animator.SetBool("IsLightAttack", true);
+            animator.enabled = true;
             attacking = true;
             LightAttackTrue = true;
 
@@ -595,7 +601,9 @@ public class Player_Mechanics : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
+            animator.enabled = false;
             animator.SetBool("IsHeavyAttack", true);
+            animator.enabled = true;
             attacking = true;
             HeavyAttackTrue = true;
             PassedStartTimer = HeavyStartTimer;
@@ -607,11 +615,11 @@ public class Player_Mechanics : MonoBehaviour
             PassedRecoveryDelay = p2.heavyAttackREF;
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && this.gameObject.tag == "Player 1" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        if (Input.GetKeyDown(KeyCode.G) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             attacking = true;
             SpecialAttackTrue = true;
-
+            p2.doSuperAttack();
             PassedStartTimer = SpecialStartTimer;
             PassedActiveTimer = SpecialActiveTimer;
             PassedRecoveryTimer = SpecialRecoveryTimer;

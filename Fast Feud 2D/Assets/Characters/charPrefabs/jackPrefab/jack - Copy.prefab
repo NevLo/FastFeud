@@ -177,7 +177,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924469780510724863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1215,7 +1215,7 @@ Transform:
   - {fileID: 1129683810335995362}
   - {fileID: 7238396577798353293}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6984533856626589263
 SpriteRenderer:
@@ -1445,6 +1445,7 @@ MonoBehaviour:
   JumpCooldown: 0
   HeavyAttack: {fileID: 1924469780510724863}
   LightAttack: {fileID: 8310570372655590178}
+  SpecialAttack: {fileID: 0}
   attacking: 0
   cooldown: 0.25
   timer: 0
@@ -1454,6 +1455,9 @@ MonoBehaviour:
   HeavyStartDelay: 0
   HeavyActiveDelay: 0
   HeavyRecoveryDelay: 0
+  SuperStartDelay: 0
+  SuperActiveDelay: 0
+  SuperRecoveryDelay: 0
   PassedStartDelay: 0
   PassedActiveDelay: 0
   PassedRecoveryDelay: 0
@@ -1659,7 +1663,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8310570372655590178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
