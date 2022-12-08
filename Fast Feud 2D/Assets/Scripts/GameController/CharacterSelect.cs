@@ -29,7 +29,7 @@ public class CharacterSelect : MonoBehaviour
     };
     public int[] implementedIndex =
     {
-        0,1,5,8
+        0,5,8
     };
 
     string[] stageList =
