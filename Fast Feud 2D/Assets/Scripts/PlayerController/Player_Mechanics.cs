@@ -10,14 +10,11 @@ public class Player_Mechanics : MonoBehaviour
 
     public GameObject OtherPlayer;
     public GameObject PauseScreen;
-    private bool IsPaused = false;
-    public Player_Mechanics BlockKey;
     public float PlayerMaxHealth;
     public float PlayerHealth;
     public float Meter;
     public PlayerBar p1Bar;
     public PlayerBar p2Bar;
-    public string PlayerName;
     public bool IsBlockingLow;
     public bool IsBlocking;
     public bool HitStun;
@@ -39,64 +36,45 @@ public class Player_Mechanics : MonoBehaviour
     public float speed;
     public float HorizontalMove;
     public float DistToGround;
-    public bool grounded;
     public Transform GroundCheck;
     public LayerMask GroundLayer;
     public LayerMask PlayerLayer;
-    public int Grounded;
-    public float JumpSpeed = 25;
- 
+    public float JumpSpeed = 30;
     public bool BlockKeyLeft;
     public bool BlockKeyRight;
     public bool jumping;
     public bool IsCrouching;
-    public float JumpCooldown;
     private bool IsFacingRight = true;
-
-
-    /// <summary>
-    /// 
-    /// </summary>
     public GameObject HeavyAttack;
     public GameObject LightAttack;
     public GameObject SpecialAttack;
-
     public bool attacking;
     public float cooldown = 0.25f;
     public float timer;
-
     public float LightStartDelay;
     public float LightActiveDelay;
     public float LightRecoveryDelay;
-
     private float LightStartTimer = 0;
     private float LightActiveTimer = 0;
     private float LightRecoveryTimer = 0;
-
     public float HeavyStartDelay;
     public float HeavyActiveDelay;
     public float HeavyRecoveryDelay;
-
     private float HeavyStartTimer = 0;
     private float HeavyActiveTimer = 0;
     private float HeavyRecoveryTimer = 0;
-
     public float SuperStartDelay;
     public float SuperActiveDelay;
     public float SuperRecoveryDelay;
-
     private float SpecialStartTimer = 0;
     private float SpecialActiveTimer = 0;
     private float SpecialRecoveryTimer = 0;
-
     private float PassedStartTimer = 0;
     private float PassedActiveTimer = 0;
     private float PassedRecoveryTimer = 0;
-
     public float PassedStartDelay;
     public float PassedActiveDelay;
     public float PassedRecoveryDelay;
-
     private bool LightAttackTrue;
     private bool HeavyAttackTrue;
     private bool SpecialAttackTrue;
@@ -106,7 +84,7 @@ public class Player_Mechanics : MonoBehaviour
         LightAttackTrue = false;
         SpecialAttackTrue = false;
         Application.targetFrameRate = 60;
-        BlockKey = this.gameObject.GetComponent<Player_Mechanics>();
+        
 
         if(gameObject.tag == "Player 1")
         {
@@ -141,7 +119,6 @@ public class Player_Mechanics : MonoBehaviour
     void Update()
     {
 
-        Attack();
         if (BlockStun == true)
         {
             BlockStunTimer++;
@@ -164,13 +141,13 @@ public class Player_Mechanics : MonoBehaviour
             }
         }
 
-        if (BlockKey.BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
+        if (BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
         {
             IsBlocking = true;
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsBlocking", true);
 
-            if (BlockKey.IsCrouching)
+            if (IsCrouching)
             {
                 IsBlockingLow = true;
             }
@@ -179,12 +156,12 @@ public class Player_Mechanics : MonoBehaviour
                 IsBlockingLow = false;
             }
         }
-        else if (BlockKey.BlockKeyRight && Input.GetKey(KeyCode.D) && gameObject.tag == "Player 1")
+        else if (BlockKeyRight && Input.GetKey(KeyCode.D) && gameObject.tag == "Player 1")
         {
             IsBlocking = true;
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsBlocking", true);
-            if (BlockKey.IsCrouching)
+            if (IsCrouching)
             {
                 IsBlockingLow = true;
             }
@@ -200,13 +177,13 @@ public class Player_Mechanics : MonoBehaviour
             IsBlocking = false;
         }
 
-        if (BlockKey.BlockKeyRight && Input.GetKey(KeyCode.RightArrow) && gameObject.tag == "Player 2")
+        if (BlockKeyRight && Input.GetKey(KeyCode.RightArrow) && gameObject.tag == "Player 2")
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsBlocking", true);
             IsBlocking = true;
 
-            if (BlockKey.IsCrouching)
+            if (IsCrouching)
             {
                 IsBlockingLow = true;
             }
@@ -216,12 +193,12 @@ public class Player_Mechanics : MonoBehaviour
             }
         }
 
-        else if (BlockKey.BlockKeyLeft && Input.GetKey(KeyCode.LeftArrow) && gameObject.tag == "Player 2")
+        else if (BlockKeyLeft && Input.GetKey(KeyCode.LeftArrow) && gameObject.tag == "Player 2")
         {
             IsBlocking = true;
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsBlocking", true);
-            if (BlockKey.IsCrouching)
+            if (IsCrouching)
             {
                 IsBlockingLow = true;
             }
@@ -305,6 +282,7 @@ public class Player_Mechanics : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Attack();
         Meter = Mathf.Min(Meter + .05f, 100);
         if (!IsBlocking)
         {
@@ -353,7 +331,7 @@ public class Player_Mechanics : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && (isGroundedOnLayer(1.0f,GroundLayer)) && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking)
         {
             IsCrouching = false;
-            //jumping = true;
+            jumping = true;
             rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsJumping", true);
@@ -422,7 +400,7 @@ public class Player_Mechanics : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && (isGroundedOnLayer(1.0f,GroundLayer)) && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking)
         {
             IsCrouching = false;
-            //jumping = true;
+            jumping = true;
             rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsJumping", true);
@@ -431,6 +409,7 @@ public class Player_Mechanics : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) && !jumping && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking)
         {
+
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsCrouching", true);
             IsCrouching = true;
@@ -451,6 +430,11 @@ public class Player_Mechanics : MonoBehaviour
         {
             speed = MaxSpeed * .5f;
         }
+        if(isGroundedOnLayer(1.0f, GroundLayer))
+        {
+            gameObject.GetComponent<Animator>().SetBool("IsJumping", false);
+            jumping = false;
+        }
 
     }
 
@@ -467,9 +451,7 @@ public class Player_Mechanics : MonoBehaviour
             OtherPlayer.gameObject != null)
         {
             IsFacingRight = !IsFacingRight;
-            Vector3 LocalScale = transform.localScale;
-            LocalScale.x *= -1f;
-            transform.localScale = LocalScale;
+            transform.localScale = transform.localScale.x * new Vector3(-1f,0,0);
             BlockKeyLeft = !BlockKeyLeft;
             BlockKeyRight = !BlockKeyRight;
         }
@@ -580,11 +562,8 @@ public class Player_Mechanics : MonoBehaviour
             PassedActiveDelay = p1.superAttackACF;
             PassedRecoveryDelay = p1.superAttackREF;
         }
-
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.enabled = false;
@@ -623,7 +602,7 @@ public class Player_Mechanics : MonoBehaviour
             PassedRecoveryDelay = p2.heavyAttackREF;
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        if (Input.GetKeyDown(KeyCode.L) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             attacking = true;
             SpecialAttackTrue = true;

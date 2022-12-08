@@ -7,14 +7,6 @@ public class Attack_Mechanics : MonoBehaviour
     // Start is called before the first frame update
 
     public float damage;
-    public float StartDelay;
-    public float ActiveDelay;
-    public float RecoveryDelay;
-
-    private float StartTimer;
-    private float ActiveTimer;
-    private float RecoveryTimer;
-
     private Character p1 = CharacterSelect.player1;
     private Character p2 = CharacterSelect.player2;
     [SerializeField]
@@ -26,37 +18,38 @@ public class Attack_Mechanics : MonoBehaviour
 
     void Start()
     {
-        if(gameObject.tag == "HAP1")
-        {
-            damage = p1.heavyAttackDamage;
-            isHeavyAttack = true;
-        }
-        else if (gameObject.tag == "HAP2")
-        {
-            damage = p2.heavyAttackDamage;
-            isHeavyAttack = true;
-        }
-        else if (gameObject.tag == "LAP1")
-        {
-            damage = p1.lightAttackDamage;
-            isHeavyAttack = false;
-        }
-        else if (gameObject.tag == "LAP2")
-        {
-            damage = p2.lightAttackDamage;
-            isHeavyAttack = false;
-        }
-        else if (gameObject.tag == "SAP1")
-        {
-            damage = p1.superAttackDamage = 0;
-            isHeavyAttack = false;
-        }
-        else if (gameObject.tag == "SAP2")
-        {
-            damage = p2.superAttackDamage = 0;
-            isHeavyAttack = false;
-        }
 
+        //realistically, this doesnt need to exist.
+        switch (gameObject.tag)
+        {
+            case "HAP1":
+                damage = p1.heavyAttackDamage;
+                isHeavyAttack = true;
+                break;
+            case "HAP2":
+                damage = p2.heavyAttackDamage;
+                isHeavyAttack = true;
+                break;
+            case "LAP1":
+                damage = p1.lightAttackDamage;
+                isHeavyAttack = false;
+                break;
+            case "LAP2":
+                damage = p2.lightAttackDamage;
+                isHeavyAttack = false;
+                break;
+            case "SAP1":
+                damage = p1.superAttackDamage;
+                isHeavyAttack = false;
+                break;
+            case "SAP2":
+                damage = p2.superAttackDamage;
+                isHeavyAttack = false;
+                break;
+            default:
+                Debug.LogError("An instance of Attack_Mechanics has been attached to an invalid gameobject");
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -77,7 +70,7 @@ public class Attack_Mechanics : MonoBehaviour
 
         if(otherPlayer != null)
         {
-            if ((!otherPlayer.IsBlocking) || (otherPlayer.IsBlockingLow && isHeavyAttack) || (!otherPlayer.IsBlockingLow && !isHeavyAttack))
+            if ((!otherPlayer.IsBlocking) | (otherPlayer.IsBlockingLow && isHeavyAttack) | (!otherPlayer.IsBlockingLow && !isHeavyAttack))
             {
                 var LPunchHit = GameObject.Find("Light_punch").GetComponent<AudioSource>();
                 var HPunchHit = GameObject.Find("Heavy_punch").GetComponent<AudioSource>();
@@ -90,7 +83,7 @@ public class Attack_Mechanics : MonoBehaviour
                 }
                 otherPlayer.PlayerHealth -= damage;
                 otherPlayer.HitStun = true;
-                blocking.Meter = Mathf.Min(blocking.Meter + damage * 3, 100);
+                blocking.Meter = Mathf.Min(blocking.Meter + damage, 100);
 
             }
             else
