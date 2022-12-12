@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -11,14 +10,11 @@ public class Player_Mechanics : MonoBehaviour
 
     public GameObject OtherPlayer;
     public GameObject PauseScreen;
-    private bool IsPaused = false;
-    public Player_Mechanics BlockKey;
     public float PlayerMaxHealth;
     public float PlayerHealth;
     public float Meter;
     public PlayerBar p1Bar;
     public PlayerBar p2Bar;
-    public string PlayerName;
     public bool IsBlockingLow;
     public bool IsBlocking;
     public bool HitStun;
@@ -40,64 +36,45 @@ public class Player_Mechanics : MonoBehaviour
     public float speed;
     public float HorizontalMove;
     public float DistToGround;
-    public bool grounded;
     public Transform GroundCheck;
     public LayerMask GroundLayer;
     public LayerMask PlayerLayer;
-    public int Grounded;
-    public float JumpSpeed = 25;
-
+    public float JumpSpeed = 30;
     public bool BlockKeyLeft;
     public bool BlockKeyRight;
     public bool jumping;
     public bool IsCrouching;
-    public float JumpCooldown;
     private bool IsFacingRight = true;
-
-
-    /// <summary>
-    /// 
-    /// </summary>
     public GameObject HeavyAttack;
     public GameObject LightAttack;
     public GameObject SpecialAttack;
-
     public bool attacking;
     public float cooldown = 0.25f;
     public float timer;
-
     public float LightStartDelay;
     public float LightActiveDelay;
     public float LightRecoveryDelay;
-
     private float LightStartTimer = 0;
     private float LightActiveTimer = 0;
     private float LightRecoveryTimer = 0;
-
     public float HeavyStartDelay;
     public float HeavyActiveDelay;
     public float HeavyRecoveryDelay;
-
     private float HeavyStartTimer = 0;
     private float HeavyActiveTimer = 0;
     private float HeavyRecoveryTimer = 0;
-
     public float SuperStartDelay;
     public float SuperActiveDelay;
     public float SuperRecoveryDelay;
-
     private float SpecialStartTimer = 0;
     private float SpecialActiveTimer = 0;
     private float SpecialRecoveryTimer = 0;
-
     private float PassedStartTimer = 0;
     private float PassedActiveTimer = 0;
     private float PassedRecoveryTimer = 0;
-
     public float PassedStartDelay;
     public float PassedActiveDelay;
     public float PassedRecoveryDelay;
-
     private bool LightAttackTrue;
     private bool HeavyAttackTrue;
     private bool SpecialAttackTrue;
@@ -107,10 +84,9 @@ public class Player_Mechanics : MonoBehaviour
         LightAttackTrue = false;
         SpecialAttackTrue = false;
         Application.targetFrameRate = 60;
-        BlockKey = this.gameObject.GetComponent<Player_Mechanics>();
+        
 
-
-        if (gameObject.tag == "Player 1")
+        if(gameObject.tag == "Player 1")
         {
             WhoWon = Resources.FindObjectsOfTypeAll<Data>()[0];
             RoundTimer = GameObject.Find("Health UI/Timer").GetComponent<Round_Timer>();
@@ -143,7 +119,6 @@ public class Player_Mechanics : MonoBehaviour
     void Update()
     {
 
-        Attack();
         if (BlockStun == true)
         {
             BlockStunTimer++;
@@ -166,98 +141,90 @@ public class Player_Mechanics : MonoBehaviour
             }
         }
 
-        if (BlockKey.BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
-            if (BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
-            {
-                IsBlocking = true;
-                var animator = gameObject.GetComponent<Animator>();
-                animator.SetBool("IsBlocking", true);
-
-                if (BlockKey.IsCrouching)
-                    if (IsCrouching)
-                    {
-                        IsBlockingLow = true;
-                    }
-                    else
-                    {
-                        IsBlockingLow = false;
-                    }
-            }
-
-            else if (BlockKeyRight && Input.GetKey(KeyCode.D) && gameObject.tag == "Player 1")
-            {
-                IsBlocking = true;
-                var animator = gameObject.GetComponent<Animator>();
-                animator.SetBool("IsBlocking", true);
-                if (BlockKey.IsCrouching)
-                    if (IsCrouching)
-                    {
-                        IsBlockingLow = true;
-                    }
-                    else
-                    {
-                        IsBlockingLow = false;
-                    }
-            }
-
-            else if (gameObject.tag == "Player 1")
-            {
-                IsBlockingLow = false;
-                IsBlocking = false;
-            }
-
-        if (BlockKey.BlockKeyRight && Input.GetKey(KeyCode.RightArrow) && gameObject.tag == "Player 2")
-            if (BlockKeyRight && Input.GetKey(KeyCode.RightArrow) && gameObject.tag == "Player 2")
-            {
-                var animator = gameObject.GetComponent<Animator>();
-                animator.SetBool("IsBlocking", true);
-                IsBlocking = true;
-
-                if (BlockKey.IsCrouching)
-                    if (IsCrouching)
-                    {
-                        IsBlockingLow = true;
-                    }
-                    else
-                    {
-                        IsBlockingLow = false;
-                    }
-            }
-
-
-            else if (BlockKeyLeft && Input.GetKey(KeyCode.LeftArrow) && gameObject.tag == "Player 2")
-            {
-                IsBlocking = true;
-                var animator = gameObject.GetComponent<Animator>();
-                animator.SetBool("IsBlocking", true);
-                if (BlockKey.IsCrouching)
-                    if (IsCrouching)
-                    {
-                        IsBlockingLow = true;
-                    }
-                    else
-                    {
-                        IsBlockingLow = false;
-                    }
-            }
-
-            else if (gameObject.tag == "Player 2")
-            {
-                var animator = gameObject.GetComponent<Animator>();
-                animator.SetBool("IsBlocking", false);
-                IsBlockingLow = false;
-                IsBlocking = false;
-            }
-        if ((PlayerHealth <= 0 || RoundTimer.timer <= 0) && doWinCheck)
+        if (BlockKeyLeft && Input.GetKey(KeyCode.A) && gameObject.tag == "Player 1")
         {
-            if (OtherPlayer.tag == "Player 1" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
+            IsBlocking = true;
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsBlocking", true);
+
+            if (IsCrouching)
+            {
+                IsBlockingLow = true;
+            }
+            else
+            {
+                IsBlockingLow = false;
+            }
+        }
+        else if (BlockKeyRight && Input.GetKey(KeyCode.D) && gameObject.tag == "Player 1")
+        {
+            IsBlocking = true;
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsBlocking", true);
+            if (IsCrouching)
+            {
+                IsBlockingLow = true;
+            }
+            else
+            {
+                IsBlockingLow = false;
+            }
+        }
+
+        else if (gameObject.tag == "Player 1")
+        {
+            IsBlockingLow = false;
+            IsBlocking = false;
+        }
+
+        if (BlockKeyRight && Input.GetKey(KeyCode.RightArrow) && gameObject.tag == "Player 2")
+        {
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsBlocking", true);
+            IsBlocking = true;
+
+            if (IsCrouching)
+            {
+                IsBlockingLow = true;
+            }
+            else
+            {
+                IsBlockingLow = false;
+            }
+        }
+
+        else if (BlockKeyLeft && Input.GetKey(KeyCode.LeftArrow) && gameObject.tag == "Player 2")
+        {
+            IsBlocking = true;
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsBlocking", true);
+            if (IsCrouching)
+            {
+                IsBlockingLow = true;
+            }
+            else
+            {
+                IsBlockingLow = false;
+            }
+        }
+
+        else if (gameObject.tag == "Player 2")
+        {
+            var animator = gameObject.GetComponent<Animator>();
+            animator.SetBool("IsBlocking", false);
+            IsBlockingLow = false;
+            IsBlocking = false;
+        }
+        if ((PlayerHealth <= 0 || RoundTimer.timer <= 0 ) && doWinCheck)
+        {
+            if(OtherPlayer.tag == "Player 1" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
             {
                 WhoWon.PlayerWin = 1;
                 WhoWon.HasSomeoneWon = true;
                 WhoWon.Player1Wins++;
             }
 
-            else if (OtherPlayer.tag == "Player 2" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
+            else if(OtherPlayer.tag == "Player 2" && OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth > PlayerHealth)
             {
                 WhoWon.PlayerWin = 2;
                 WhoWon.HasSomeoneWon = true;
@@ -266,14 +233,14 @@ public class Player_Mechanics : MonoBehaviour
 
             else if (OtherPlayer.GetComponent<Player_Mechanics>().PlayerHealth == PlayerHealth)
             {
-                if (WhoWon.Player1Wins == WhoWon.Player2Wins)
+                if(WhoWon.Player1Wins == WhoWon.Player2Wins)
                 {
                     if (WhoWon.Player1Wins != 1)
                     {
                         WhoWon.Player1Wins++;
                         WhoWon.Player2Wins++;
                     }
-                }
+                } 
                 else if (WhoWon.Player1Wins > WhoWon.Player2Wins)
                 {
                     WhoWon.Player2Wins++;
@@ -303,11 +270,11 @@ public class Player_Mechanics : MonoBehaviour
         {
             speed = 5;
         }
-        else if (!IsCrouching && (BlockStun == false && HitStun == false) && (isGroundedOnLayer(1.0f, GroundLayer) || isGroundedOnLayer(1.5f, PlayerLayer)) && gameObject.tag == "Player 1")
+        else if (!IsCrouching && (BlockStun == false && HitStun == false) && (isGroundedOnLayer(1.0f,GroundLayer) || isGroundedOnLayer(1.5f,PlayerLayer)) && gameObject.tag == "Player 1")
         {
             speed = 10;
         }
-        else if (!IsCrouching && (BlockStun == false && HitStun == false) && (isGroundedOnLayer(1.0f, GroundLayer) || isGroundedOnLayer(1.5f, PlayerLayer)) && gameObject.tag == "Player 2")
+        else if (!IsCrouching && (BlockStun == false && HitStun == false) && (isGroundedOnLayer(1.0f,GroundLayer) || isGroundedOnLayer(1.5f,PlayerLayer)) && gameObject.tag == "Player 2")
         {
             speed = 10;
         }
@@ -322,36 +289,36 @@ public class Player_Mechanics : MonoBehaviour
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsBlocking", false);
         }
-        if (Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking
-            || (isGroundedOnLayer(1.5f, PlayerLayer) && Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1") && !attacking)
+        if (Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking 
+            || (isGroundedOnLayer(1.5f,PlayerLayer) && Input.GetKey(KeyCode.A) && this.gameObject.tag == "Player 1") && !attacking)
         {
 
-            if (isGroundedOnLayer(1.0f, GroundLayer))
+            if (isGroundedOnLayer(1.0f,GroundLayer))
             {
                 rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
                 var animator = gameObject.GetComponent<Animator>();
                 animator.SetBool("IsWalking", true);
             }
 
-            else if (isGroundedOnLayer(1.5f, PlayerLayer))
+            else if (isGroundedOnLayer(1.5f,PlayerLayer))
             {
                 rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
 
             }
         }
 
-        if (Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking
-            || (isGroundedOnLayer(1.5f, PlayerLayer) && Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1") && !attacking)
+        if (Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking 
+            || (isGroundedOnLayer(1.5f,PlayerLayer) && Input.GetKey(KeyCode.D) && this.gameObject.tag == "Player 1") && !attacking)
         {
-
-            if (isGroundedOnLayer(1.0f, GroundLayer))
+            
+            if (isGroundedOnLayer(1.0f,GroundLayer))
             {
                 rb.velocity = new Vector2(1 * speed, rb.velocity.y);
                 var animator = gameObject.GetComponent<Animator>();
                 animator.SetBool("IsWalking", true);
             }
 
-            else if (isGroundedOnLayer(1.5f, PlayerLayer))
+            else if (isGroundedOnLayer(1.5f,PlayerLayer))
             {
                 rb.velocity = new Vector2(1 * speed, rb.velocity.y);
             }
@@ -361,15 +328,14 @@ public class Player_Mechanics : MonoBehaviour
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsWalking", false);
         }
-        if (Input.GetKeyDown(KeyCode.W) && (isGroundedOnLayer(1.0f, GroundLayer)) && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking)
+        if (Input.GetKeyDown(KeyCode.W) && (isGroundedOnLayer(1.0f,GroundLayer)) && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking)
         {
             IsCrouching = false;
-            //jumping = true;
             jumping = true;
             rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
             var animator = gameObject.GetComponent<Animator>();
             animator.SetBool("IsJumping", true);
-
+   
         }
 
         if (Input.GetKey(KeyCode.S) && !jumping && this.gameObject.tag == "Player 1" && !BlockStun && !HitStun && !attacking)
@@ -390,36 +356,36 @@ public class Player_Mechanics : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////////////
         ///
 
-        if (Input.GetKey(KeyCode.LeftArrow) && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking
-            || (isGroundedOnLayer(1.5f, PlayerLayer) && Input.GetKey(KeyCode.LeftArrow)) && this.gameObject.tag == "Player 2" && !attacking)
-
+        if (Input.GetKey(KeyCode.LeftArrow) && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking 
+            || (isGroundedOnLayer(1.5f,PlayerLayer) && Input.GetKey(KeyCode.LeftArrow)) && this.gameObject.tag == "Player 2" && !attacking)
+      
         {
             IsCrouching = false;
-            if (isGroundedOnLayer(1.0f, GroundLayer))
+            if (isGroundedOnLayer(1.0f,GroundLayer))
             {
                 rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
                 var animator = gameObject.GetComponent<Animator>();
                 animator.SetBool("IsWalking", true);
             }
 
-            else if (isGroundedOnLayer(1.5f, PlayerLayer))
+            else if(isGroundedOnLayer(1.5f,PlayerLayer))
             {
                 rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking
-            || (isGroundedOnLayer(1.5f, PlayerLayer) && Input.GetKey(KeyCode.RightArrow)) && this.gameObject.tag == "Player 2" && !attacking)
+        if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking 
+            || (isGroundedOnLayer(1.5f,PlayerLayer) && Input.GetKey(KeyCode.RightArrow)) && this.gameObject.tag == "Player 2" && !attacking)
         {
             IsCrouching = false;
-            if (isGroundedOnLayer(1.0f, GroundLayer))
+            if (isGroundedOnLayer(1.0f,GroundLayer))
             {
                 rb.velocity = new Vector2(1 * speed, rb.velocity.y);
                 var animator = gameObject.GetComponent<Animator>();
                 animator.SetBool("IsWalking", true);
             }
 
-            else if (isGroundedOnLayer(1.5f, PlayerLayer))
+            else if (isGroundedOnLayer(1.5f,PlayerLayer))
             {
                 rb.velocity = new Vector2(1 * speed, rb.velocity.y);
             }
@@ -431,10 +397,9 @@ public class Player_Mechanics : MonoBehaviour
             animator.SetBool("IsWalking", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGroundedOnLayer(1.0f, GroundLayer)) && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGroundedOnLayer(1.0f,GroundLayer)) && this.gameObject.tag == "Player 2" && !BlockStun && !HitStun && !attacking)
         {
             IsCrouching = false;
-            //jumping = true;
             jumping = true;
             rb.velocity = new Vector2(rb.velocity.x * .5f, JumpSpeed);
             var animator = gameObject.GetComponent<Animator>();
@@ -461,11 +426,11 @@ public class Player_Mechanics : MonoBehaviour
             Flip();
         }
 
-        if (!isGroundedOnLayer(1.0f, GroundLayer) && !isGroundedOnLayer(1.5f, PlayerLayer))
+        if (!isGroundedOnLayer(1.0f,GroundLayer) && !isGroundedOnLayer(1.5f,PlayerLayer))
         {
             speed = MaxSpeed * .5f;
         }
-        else if (isGroundedOnLayer(1.0f, GroundLayer))
+        if(isGroundedOnLayer(1.0f, GroundLayer))
         {
             gameObject.GetComponent<Animator>().SetBool("IsJumping", false);
             jumping = false;
@@ -481,15 +446,12 @@ public class Player_Mechanics : MonoBehaviour
     void Flip()
     {
         // (((IFR & OP.pos.x <= trans.pos.x) || (!IFR & OP.pos.x >= trans.pos.x) ) && otherPlayer.gameObject != null))
-        if (((IsFacingRight && OtherPlayer.transform.position.x <= gameObject.transform.position.x) ||
-            (!IsFacingRight && OtherPlayer.transform.position.x >= gameObject.transform.position.x)) &&
+        if (((IsFacingRight && OtherPlayer.transform.position.x <= gameObject.transform.position.x ) ||
+            (!IsFacingRight && OtherPlayer.transform.position.x >= gameObject.transform.position.x )) && 
             OtherPlayer.gameObject != null)
         {
             IsFacingRight = !IsFacingRight;
-            Vector3 LocalScale = transform.localScale;
-            LocalScale.x *= -1f;
-            transform.localScale = LocalScale;
-            //transform.localScale = transform.localScale.x * new Vector3(-1f, 1, 1);
+            transform.localScale = transform.localScale.x * new Vector3(-1f,0,0);
             BlockKeyLeft = !BlockKeyLeft;
             BlockKeyRight = !BlockKeyRight;
         }
@@ -533,7 +495,7 @@ public class Player_Mechanics : MonoBehaviour
             AttackActiveTimer = 0;
             AttackRecoveryTimer = 0;
             var animator = gameObject.GetComponent<Animator>();
-            animator.SetBool("IsLightAttack", false);
+            animator.ResetTrigger("IsHeavy");
             animator.SetBool("IsHeavyAttack", false);
         }
     }
@@ -552,7 +514,7 @@ public class Player_Mechanics : MonoBehaviour
             LightAttackTrue = true;
             var animator = gameObject.GetComponent<Animator>();
             animator.enabled = false;
-            animator.SetBool("IsLightAttack", true);
+            animator.SetTrigger("IsHeavy");
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsCrouching", false);
             animator.enabled = true;
@@ -569,7 +531,7 @@ public class Player_Mechanics : MonoBehaviour
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.enabled = false;
-            animator.SetBool("IsHeavyAttack", true);
+            animator.SetTrigger("IsHeavy");
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsCrouching", false);
             animator.enabled = true;
@@ -600,37 +562,32 @@ public class Player_Mechanics : MonoBehaviour
             PassedActiveDelay = p1.superAttackACF;
             PassedRecoveryDelay = p1.superAttackREF;
         }
-
-
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if (Input.GetKeyDown(KeyCode.O) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
-            {
-                var animator = gameObject.GetComponent<Animator>();
-                animator.enabled = false;
-                animator.SetBool("IsLightAttack", true);
-                animator.SetBool("IsWalking", false);
-                animator.SetBool("IsCrouching", false);
-                animator.enabled = true;
-                attacking = true;
-                LightAttackTrue = true;
+        {
+            var animator = gameObject.GetComponent<Animator>();
+            animator.enabled = false;
+            animator.SetBool("IsLightAttack", true);
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsCrouching", false);
+            animator.enabled = true;
+            attacking = true;
+            LightAttackTrue = true;
 
-                PassedStartTimer = LightStartTimer;
-                PassedActiveTimer = LightActiveTimer;
-                PassedRecoveryTimer = LightRecoveryTimer;
+            PassedStartTimer = LightStartTimer;
+            PassedActiveTimer = LightActiveTimer;
+            PassedRecoveryTimer = LightRecoveryTimer;
 
-                PassedStartDelay = p2.lightAttackSUF;
-                PassedActiveDelay = p2.lightAttackACF;
-                PassedRecoveryDelay = p2.lightAttackREF;
+            PassedStartDelay = p2.lightAttackSUF;
+            PassedActiveDelay = p2.lightAttackACF;
+            PassedRecoveryDelay = p2.lightAttackREF;
 
-            }
+        }
         if (Input.GetKeyDown(KeyCode.P) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.enabled = false;
-            animator.SetBool("IsHeavyAttack", true);
+            animator.SetTrigger("IsHeavy");
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsCrouching", false);
             animator.enabled = true;
@@ -645,20 +602,19 @@ public class Player_Mechanics : MonoBehaviour
             PassedRecoveryDelay = p2.heavyAttackREF;
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
-            if (Input.GetKeyDown(KeyCode.L) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
-            {
-                attacking = true;
-                SpecialAttackTrue = true;
-                p2.doSuperAttack();
-                PassedStartTimer = SpecialStartTimer;
-                PassedActiveTimer = SpecialActiveTimer;
-                PassedRecoveryTimer = SpecialRecoveryTimer;
+        if (Input.GetKeyDown(KeyCode.L) && this.gameObject.tag == "Player 2" && !LightAttackTrue && !HeavyAttackTrue && !SpecialAttackTrue && !BlockStun && !HitStun && !IsBlocking)
+        {
+            attacking = true;
+            SpecialAttackTrue = true;
+            p2.doSuperAttack();
+            PassedStartTimer = SpecialStartTimer;
+            PassedActiveTimer = SpecialActiveTimer;
+            PassedRecoveryTimer = SpecialRecoveryTimer;
 
-                PassedStartDelay = p2.superAttackSUF;
-                PassedActiveDelay = p2.superAttackACF;
-                PassedRecoveryDelay = p2.superAttackREF;
-            }
+            PassedStartDelay = p2.superAttackSUF;
+            PassedActiveDelay = p2.superAttackACF;
+            PassedRecoveryDelay = p2.superAttackREF;
+        }
     }
 }
 

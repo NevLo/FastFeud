@@ -55,7 +55,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430165578623421198}
-  m_LocalRotation: {x: 0, y: 0, z: -0.046839297, w: 0.9989025}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0031909337, w: 0.99999493}
   m_LocalPosition: {x: 0.07312025, y: -0.05490387, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604124958182273776}
-  m_LocalRotation: {x: 0, y: 0, z: -0.000000014865351, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.40555385, w: 0.9140712}
   m_LocalPosition: {x: 0.23028253, y: 0.000000011448703, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -256,6 +256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  StartDelay: 0
+  ActiveDelay: 0
+  RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
   isHeavyAttack: 0
@@ -285,37 +288,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &3259795041238965528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1286798525064158269}
-  m_Layer: 0
-  m_Name: Special
-  m_TagString: SAP1
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1286798525064158269
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3259795041238965528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6984533856626589262}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3601143422855396665
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +376,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4113645388818076513}
-  m_LocalRotation: {x: -0, y: -0, z: 0.2907224, w: 0.9568075}
+  m_LocalRotation: {x: -0, y: -0, z: 0.4416028, w: 0.89721066}
   m_LocalPosition: {x: 0.15998957, y: -0.000000013253358, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -467,7 +439,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5010860459591667769}
-  m_LocalRotation: {x: -0, y: -0, z: 0.1023703, w: 0.9947464}
+  m_LocalRotation: {x: -0, y: -0, z: 0.36441725, w: 0.9312358}
   m_LocalPosition: {x: 0.17121616, y: 0.00000012873747, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -498,7 +470,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5464678596541772300}
-  m_LocalRotation: {x: 0, y: 0, z: 0.01602221, w: 0.9998717}
+  m_LocalRotation: {x: 0, y: 0, z: 0.16242772, w: 0.9867205}
   m_LocalPosition: {x: 0.07512268, y: 0.036148284, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1146,9 +1118,8 @@ Transform:
   - {fileID: 7238396577798353293}
   - {fileID: 1960980969452219876}
   - {fileID: 3360352630000425992}
-  - {fileID: 1286798525064158269}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6984533856626589263
 SpriteRenderer:
@@ -1232,8 +1203,8 @@ MonoBehaviour:
   - {fileID: 8249995752866929591}
   - {fileID: 9057835643015645540}
   m_Bounds:
-    m_Center: {x: -0.04264237, y: 0.083227515, z: 0}
-    m_Extent: {x: 0.14957415, y: 0.5414127, z: 0}
+    m_Center: {x: -0.0121195465, y: 0.053831697, z: 0}
+    m_Extent: {x: 0.15587793, y: 0.5360076, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1357,7 +1328,7 @@ MonoBehaviour:
   JumpCooldown: 0
   HeavyAttack: {fileID: 1924469780510724863}
   LightAttack: {fileID: 8310570372655590178}
-  SpecialAttack: {fileID: 3259795041238965528}
+  SpecialAttack: {fileID: 0}
   attacking: 0
   cooldown: 0.25
   timer: 0
@@ -1512,7 +1483,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7337152739588014405}
-  m_LocalRotation: {x: 0, y: 0, z: 0.000000096815334, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.21085535, w: 0.9775173}
   m_LocalPosition: {x: 0.25276583, y: 0.000000018616259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1670,6 +1641,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  StartDelay: 0
+  ActiveDelay: 0
+  RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
   isHeavyAttack: 0
