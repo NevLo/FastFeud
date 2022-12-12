@@ -98,9 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  StartDelay: 0
-  ActiveDelay: 0
-  RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
   isHeavyAttack: 0
@@ -1073,13 +1070,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OtherPlayer: {fileID: 0}
   PauseScreen: {fileID: 0}
-  BlockKey: {fileID: 0}
   PlayerMaxHealth: 100
   PlayerHealth: 100
   Meter: 0
   p1Bar: {fileID: 0}
   p2Bar: {fileID: 0}
-  PlayerName: 
   IsBlockingLow: 0
   IsBlocking: 0
   HitStun: 0
@@ -1095,7 +1090,6 @@ MonoBehaviour:
   speed: 0
   HorizontalMove: 0
   DistToGround: 0
-  grounded: 0
   GroundCheck: {fileID: 6984533855749368728}
   GroundLayer:
     serializedVersion: 2
@@ -1103,13 +1097,11 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 128
-  Grounded: 0
   JumpSpeed: 25
   BlockKeyLeft: 0
   BlockKeyRight: 0
   jumping: 0
   IsCrouching: 0
-  JumpCooldown: 0
   HeavyAttack: {fileID: 1924469780510724863}
   LightAttack: {fileID: 8310570372655590178}
   SpecialAttack: {fileID: 6442031131053355714}
@@ -1338,9 +1330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  StartDelay: 0
-  ActiveDelay: 0
-  RecoveryDelay: 0
   activeCharIsP1: 0
   blocking: {fileID: -4892664796013998026}
   isHeavyAttack: 0
