@@ -23,13 +23,13 @@ public class Annie : Character
         isSuperInvicibleSU = true;
 
         //## LIGHT ATTACK FRAME DATA ##
-        lightAttackSUF = 2;
-        lightAttackACF = 7;
-        lightAttackREF = 1;
+        lightAttackSUF = 5;
+        lightAttackACF = 5;
+        lightAttackREF = 5;
         //## HEAVY ATTACK FRAME DATA ##
-        heavyAttackSUF = 3;
-        heavyAttackACF = 8;
-        heavyAttackREF = 4;
+        heavyAttackSUF = 10;
+        heavyAttackACF = 5;
+        heavyAttackREF = 10;
         //## KICK FRAME DATA ##
         kickSUF = 0;
         kickACF = 0;

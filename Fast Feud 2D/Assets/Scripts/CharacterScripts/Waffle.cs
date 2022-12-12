@@ -23,13 +23,13 @@ public class Waffle : Character
         isSuperInvicibleSU = true;
         isAnimatable = true;
         //## LIGHT ATTACK FRAME DATA ##
-        lightAttackSUF = 20;
-        lightAttackACF = 3;
-        lightAttackREF = 10;
+        lightAttackSUF = 8;
+        lightAttackACF = 9;
+        lightAttackREF = 8;
         //## HEAVY ATTACK FRAME DATA ##
-        heavyAttackSUF = 50;
-        heavyAttackACF = 5;
-        heavyAttackREF = 20;
+        heavyAttackSUF = 17;
+        heavyAttackACF = 12;
+        heavyAttackREF = 21;
         //## KICK FRAME DATA ##
         kickSUF = 0;
         kickACF = 0;

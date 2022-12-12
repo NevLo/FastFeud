@@ -514,7 +514,7 @@ public class Player_Mechanics : MonoBehaviour
             LightAttackTrue = true;
             var animator = gameObject.GetComponent<Animator>();
             animator.enabled = false;
-            animator.SetTrigger("IsHeavy");
+            animator.SetTrigger("IsLight");
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsCrouching", false);
             animator.enabled = true;
@@ -567,6 +567,7 @@ public class Player_Mechanics : MonoBehaviour
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.enabled = false;
+            animator.SetTrigger("IsLight");
             animator.SetBool("IsLightAttack", true);
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsCrouching", false);

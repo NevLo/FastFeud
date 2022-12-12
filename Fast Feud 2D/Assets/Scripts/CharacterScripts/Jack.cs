@@ -23,13 +23,13 @@ public class Jack : Character
         isSuperInvicibleSU = true;
 
         //## LIGHT ATTACK FRAME DATA ##
-        lightAttackSUF = 6;
-        lightAttackACF = 5;
-        lightAttackREF = 2;
+        lightAttackSUF = 5;
+        lightAttackACF = 6;
+        lightAttackREF = 3;
         //## HEAVY ATTACK FRAME DATA ##
-        heavyAttackSUF = 25;
-        heavyAttackACF = 5;
-        heavyAttackREF = 5;
+        heavyAttackSUF = 17;
+        heavyAttackACF = 4;
+        heavyAttackREF = 4;
         //## KICK FRAME DATA ##
         kickSUF = 0;
         kickACF = 0;
