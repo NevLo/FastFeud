@@ -451,7 +451,7 @@ public class Player_Mechanics : MonoBehaviour
             OtherPlayer.gameObject != null)
         {
             IsFacingRight = !IsFacingRight;
-            transform.localScale = transform.localScale.x * new Vector3(-1f,0,0);
+            transform.localScale = transform.localScale.x * new Vector3(-1f,1,1);
             BlockKeyLeft = !BlockKeyLeft;
             BlockKeyRight = !BlockKeyRight;
         }
