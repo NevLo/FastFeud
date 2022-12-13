@@ -496,10 +496,9 @@ public class Player_Mechanics : MonoBehaviour
             AttackRecoveryTimer = 0;
             var animator = gameObject.GetComponent<Animator>();
             animator.ResetTrigger("IsHeavy");
-            animator.SetBool("IsHeavyAttack", false);
-        }
+            animator.ResetTrigger("IsLight");
+       }
     }
-
     void Attack()
     {
         if (attacking)
@@ -568,7 +567,6 @@ public class Player_Mechanics : MonoBehaviour
             var animator = gameObject.GetComponent<Animator>();
             animator.enabled = false;
             animator.SetTrigger("IsLight");
-            animator.SetBool("IsLightAttack", true);
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsCrouching", false);
             animator.enabled = true;
@@ -618,5 +616,6 @@ public class Player_Mechanics : MonoBehaviour
         }
     }
 }
+
 
 

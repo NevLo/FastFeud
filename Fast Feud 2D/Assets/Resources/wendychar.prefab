@@ -747,7 +747,6 @@ GameObject:
   - component: {fileID: 5558235999690299764}
   - component: {fileID: 2172128922950814379}
   - component: {fileID: 4459406657084587871}
-  - component: {fileID: 172994240889799844}
   - component: {fileID: -3495642617247434444}
   m_Layer: 0
   m_Name: wendychar
@@ -765,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 6900280602347456331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4136637808334109643}
@@ -914,33 +913,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &172994240889799844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6900280602347456331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebfd23dec2dbda49858778da0b08c90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stun: {fileID: 0}
-  HeavyAttack: {fileID: 0}
-  LightAttack: {fileID: 0}
-  attacking: 0
-  cooldown: 0.25
-  timer: 0
-  LightStartDelay: 0
-  LightActiveDelay: 0
-  LightRecoveryDelay: 0
-  HeavyStartDelay: 0
-  HeavyActiveDelay: 0
-  HeavyRecoveryDelay: 0
-  PassedStartDelay: 0
-  PassedActiveDelay: 0
-  PassedRecoveryDelay: 0
 --- !u!114 &-3495642617247434444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,19 +927,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OtherPlayer: {fileID: 0}
   PauseScreen: {fileID: 0}
-  BlockKey: {fileID: 0}
   PlayerMaxHealth: 0
   PlayerHealth: 0
+  Meter: 0
   p1Bar: {fileID: 0}
   p2Bar: {fileID: 0}
-  PlayerName: 
   IsBlockingLow: 0
   IsBlocking: 0
   HitStun: 0
   BlockStun: 0
   HitStunTimer: 0
   BlockStunTimer: 0
-  WhoWon: []
+  WhoWon: {fileID: 0}
   RoundTimer: {fileID: 0}
   doWinCheck: 1
   rb: {fileID: 0}
@@ -976,7 +947,6 @@ MonoBehaviour:
   speed: 0
   HorizontalMove: 0
   DistToGround: 0
-  grounded: 0
   GroundCheck: {fileID: 0}
   GroundLayer:
     serializedVersion: 2
@@ -984,13 +954,29 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 0
-  Grounded: 0
   JumpSpeed: 0
   BlockKeyLeft: 0
   BlockKeyRight: 0
   jumping: 0
   IsCrouching: 0
-  JumpCooldown: 0
+  HeavyAttack: {fileID: 0}
+  LightAttack: {fileID: 0}
+  SpecialAttack: {fileID: 0}
+  attacking: 0
+  cooldown: 0.25
+  timer: 0
+  LightStartDelay: 0
+  LightActiveDelay: 0
+  LightRecoveryDelay: 0
+  HeavyStartDelay: 0
+  HeavyActiveDelay: 0
+  HeavyRecoveryDelay: 0
+  SuperStartDelay: 0
+  SuperActiveDelay: 0
+  SuperRecoveryDelay: 0
+  PassedStartDelay: 0
+  PassedActiveDelay: 0
+  PassedRecoveryDelay: 0
 --- !u!1 &6912638832752647053
 GameObject:
   m_ObjectHideFlags: 0
