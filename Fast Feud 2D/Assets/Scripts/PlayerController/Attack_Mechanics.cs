@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attack_Mechanics : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public Shake Camera;
     public float damage;
     private Character p1 = CharacterSelect.player1;
     private Character p2 = CharacterSelect.player2;
@@ -15,9 +15,13 @@ public class Attack_Mechanics : MonoBehaviour
     public Player_Mechanics blocking;
 
     public bool isHeavyAttack;
+    
+    public AnimationCurve curve;
+    public float duration = 1f;
 
     void Start()
     {
+        Camera = GameObject.Find("Main Camera").GetComponent<Shake>();
 
         //realistically, this doesnt need to exist.
         switch (gameObject.tag)
@@ -77,9 +81,11 @@ public class Attack_Mechanics : MonoBehaviour
                 
                 if(isHeavyAttack){
                     HPunchHit.Play();
+                    Camera.start=true;
                 }
                 else{
                     LPunchHit.Play();
+                    Camera.start=true;
                 }
                 otherPlayer.PlayerHealth -= damage;
                 otherPlayer.HitStun = true;
@@ -92,4 +98,5 @@ public class Attack_Mechanics : MonoBehaviour
             }
         }
     }
+
 }
